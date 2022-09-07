@@ -1,0 +1,14 @@
+.AppLayout {
+    color: var(--color-text);
+    background-color: var(--color-bg-primery);
+}
+
+.layoutContent {
+    padding-left: var(--sidebar-width);
+    background-color: var(--color-bg-secondry);
+    min-height: 100vh;
+}
+
+.layoutContentMain {
+    padding: 30px;
+}

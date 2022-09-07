@@ -1,0 +1,64 @@
+
+  .reviewsGrid{
+    padding: 40px 0;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap:1rem ;
+    grid-row-gap:2rem ;
+    justify-content: center;
+   
+    
+  }
+  .col{
+    width: 400px;
+    height: 450px;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    border: 3px solid #A53860 ;
+    border-top-left-radius: 30%;
+    border-bottom-right-radius: 30%;
+    background-image: url('../../images/login-form__bg.png'); 
+  }
+  .col img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  .col p{
+    margin: 1rem 0; 
+  }
+  .col h5{
+    margin: 1rem 0; 
+  }
+  .name{
+    font-size: 20px;
+    text-transform: uppercase;
+    margin: 20px 0;
+  }
+  .stars{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #eef163;
+    margin-bottom: 20px;
+  }
+  
+  
+  @media screen and (max-width:960px) {
+  .col{
+    flex: 100%;
+    max-width: 80%;
+  }
+  }
+  
+  @media screen and (max-width:600px) {
+  .col{
+    flex: 100%;
+    max-width: 100%;
+  }
+  }
+  

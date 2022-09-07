@@ -1,0 +1,68 @@
+.grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap:1rem ;
+  grid-row-gap:5rem ;
+}
+.container {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.card {
+  width: 400px;
+  height: 430px;
+  background-color:var(--color-bg-secondry);
+  border-radius: 1rem;
+  padding: 4rem 1rem 1rem 1rem;
+}
+
+.image {
+  position: absolute;
+  width: 150px;
+  transform: translate(5rem, -8.5rem);
+}
+
+.title {
+  font-size: 1.5rem;
+  color:var(--color-primery);
+  margin-bottom: 1rem;
+  margin-top: -3rem;
+}
+
+.data {
+  transform: translateY(2.8rem);
+}
+.dataGrid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap:0.5rem ;
+}
+.info {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  margin-left: -3rem;
+}
+
+.description {
+  font-size: 1rem;
+  margin-bottom: 1.25rem;
+}
+.buttons{
+  display: flex;
+  flex-direction: row;
+}
+.button {
+  display: block;
+  width: max-content;
+  padding: 0.25rem 2rem;
+  background-color: var( --color-secondry);
+  color: rgb(255, 255, 255);
+  font-size: 19px;
+  border-radius: .5rem;
+  font-weight: 600;
+  margin: 0 0.5rem;
+}

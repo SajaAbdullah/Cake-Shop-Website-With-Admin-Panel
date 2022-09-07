@@ -1,0 +1,22 @@
+[
+  {
+    "categoryId": "Aniversary",
+    "name": "Aniversary",
+    "image": "/assets/img/top-categories-img1.jpg"
+  },
+  {
+    "categoryId": "Birthday",
+    "name": "Birthday",
+    "image": "/assets/img/top-categories-img2.jpg"
+  },
+  {
+    "categoryId": "Cupcakes",
+    "name": "Cupcakes",
+    "image": "/assets/img/top-categories-img3.jpg"
+  },
+  {
+    "categoryId": "Chocolate",
+    "name": "Chocolate",
+    "image": "/assets/img/top-categories-img4.jpg"
+  }
+]

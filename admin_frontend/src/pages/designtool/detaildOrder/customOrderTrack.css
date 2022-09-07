@@ -1,0 +1,111 @@
+.main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+ul{
+    display: flex;
+    margin: 0 0 1rem 0;
+}
+ul li{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+ul li .icon{
+    font-size: 45px;
+    color: var(--color-primery);
+    margin: 0 100px;
+}
+ul li .text{
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--color-primery);
+}
+
+/* Progress Div Css  */
+
+ul li .progress{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(68, 68, 68, 0.781);
+    margin: 14px 0;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    position: relative;
+    cursor: pointer;
+}
+.progress::after{
+    content: " ";
+    position: absolute;
+    width: 230px;
+    height: 5px;
+    background-color: rgba(68, 68, 68, 0.781);
+    right: 30px;
+}
+.one::after{
+    width: 0;
+    height: 0;
+}
+ul li .progress .uil{
+    display: none;
+}
+ul li .progress p{
+    font-size: 23px;
+}
+
+/* Active Css  */
+
+ul li .active{
+    background-color:var(--color-secondry);
+    display: grid;
+    place-items: center;
+}
+li .active::after{
+    background-color: var(--color-secondry);
+}
+ul li .active p{
+    display: none;
+}
+ul li .active .uil{
+    font-size: 30px;
+    display: flex;
+}
+
+.canceldOrder1{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: red;
+    margin: 14px 0;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    position: relative;
+}
+
+.canceldOrder{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: red;
+    margin: 14px 0;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    position: relative;
+}
+
+.canceldOrder::after{
+    content: " ";
+    position: absolute;
+    width: 227px;
+    height: 5px;
+    background-color: red;
+    right: 30px;
+}

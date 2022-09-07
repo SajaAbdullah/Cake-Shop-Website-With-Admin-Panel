@@ -1,0 +1,89 @@
+[
+  {
+    "title": "About",
+    "navLinks": [
+      {
+        "name": "About us",
+        "path": "/about"
+      },
+      {
+        "name": "Categories",
+        "path": "/categories"
+      },
+      {
+        "name": "Order Cake",
+        "path": "/shop"
+      },
+      {
+        "name": "Blog",
+        "path": "/blog"
+      },
+      {
+        "name": "FAQ",
+        "path": "/faq"
+      },
+      {
+        "name": "Contacts",
+        "path": "/contact"
+      }
+    ]
+  },
+  {
+    "title": "Categories",
+    "navLinks": [
+      {
+        "name": "Make up",
+        "path": "/categories"
+      },
+      {
+        "name": "SPA",
+        "path": "/categories"
+      },
+      {
+        "name": "Perfume",
+        "path": "/categories"
+      },
+      {
+        "name": "Nails",
+        "path": "/categories"
+      },
+      {
+        "name": "Skin care",
+        "path": "/categories"
+      },
+      {
+        "name": "Hair care",
+        "path": "/categories"
+      }
+    ]
+  },
+  {
+    "title": "Useful links",
+    "navLinks": [
+      {
+        "name": "Careers",
+        "path": "/about"
+      },
+      {
+        "name": "Privacy policy",
+        "path": "/faq"
+      },
+      {
+        "name": "Terms of use",
+        "path": "/about"
+      },
+      {
+        "name": "Support",
+        "path": "/blog"
+      },
+      {
+        "name": "Shipping details",
+        "path": "/about"
+      },
+      {
+        "name": "Information",
+        "path": "/about"
+      }
+    ]
+  }
+]

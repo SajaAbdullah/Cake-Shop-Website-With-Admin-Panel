@@ -1,0 +1,17 @@
+[
+  {
+    "step": "Shipping To",
+    "title": "Rawalpindi and Islamabad",
+    "icon": "icon-shipping"
+  },
+  {
+    "step": "Helpline",
+    "title": "+92 336 0057577",
+    "icon": "icon-helpline"
+  },
+  {
+    "step": "Customer Support",
+    "title": "we are glad to help you",
+    "icon": "icon-24"
+  }
+]

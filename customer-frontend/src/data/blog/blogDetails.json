@@ -1,0 +1,115 @@
+{
+  "title": "Perfumes, perfumed or eau de toilette?",
+  "subTitle": "What is actually on your table?",
+  "id": "2323",
+  "image": "/assets/img/blog-img1.jpg",
+  "shortDescription": "Nourish your skin with toxin-free cosmetic products. With the offers that yo skin with toxin-free cosmetic products that you can’t refuse.",
+  "date": {
+    "month": "june",
+    "date": "21",
+    "year": "2020"
+  },
+  "authorName": "Melissa Jones",
+  "totalWatchCount": "114",
+  "totalCommentCount": "50",
+  "content": "The history of perfume is about 5,000 years old and dates back to ancient Egypt and Mesopotamia. The fragrances of those times differed significantly from modern ones in that they were very concentrated and were more often intended for religious ceremonies than for cosmetic purposes. Although the same Cleopatra had her own perfume factory and left behind a recipe for a fragrance of 16 ingredients - \"kifi\". It is difficult to call it a perfume in the modern sense - it is rather a mixture of oils and herbs. Modern perfumes can have a maximum of 30% aromatic component, everything else - an alcoholic solution. But do not be upset. If you do not need such extravagant appearances as in the queen of Egypt, when he fragrances of her ships spread throughout the coast, then 100% concentrate is unlikely to be needed.",
+  "titleTwo": "About sustainability",
+  "contentTwo": "It would seem that everything is clear here: the higher the concentration of aromatic components - the more stable the aroma. But not everything is so simple: even if in the laboratory the aroma stays calm for a day or more, in life it is influenced by humidity and temperature, skin condition and the aroma of your body. Therefore, experts advise to apply fragrances on a clean, moisturizing body lotion. But even this does not guarantee that super-concentrated perfumes will last longer than perfumed or eau de toilette. It all depends on the volatility of the ingredients themselves.",
+  "quote": {
+    "content": "Fruity notes are considered the lightest, but sandalwood and amber - the strongest. This does not mean that fruit flavors should be forgotten. First, they have a good plume, and secondly, history knows many cases where the aroma was much more stable than required by the situation.",
+    "author": "Melissa Jones"
+  },
+  "postList": [
+    {
+      "title": "Perfume",
+      "content": "Is the most expensive type of perfume, because it contains the highest concentration of aromatic composition - 20-30%. Therefore, they should be used only for special events."
+    },
+    {
+      "title": "Perfumed water",
+      "content": "Is the most concentrated after perfumes mixture of perfume composition 12-15% with ethyl alcohol 85%."
+    },
+    {
+      "title": "Cologne",
+      "content": "is the least concentrated type of perfume. Contains 5% aromatic substances dissolved in 80% ethyl alcohol. By the way, it was the most famous French emperor who introduced colognes into fashion and used 1-2 bottles a day"
+    },
+    {
+      "title": "Eau de toilette",
+      "content": "is what is most likely on your cosmetic table. The most common type of perfume. Contains 6-12% of the perfume composition. The term itself, by the way, was invented by Napoleon when he invented a bergamot-based fragrance recipe during a military campaign and called it 'eau de toilette.'"
+    }
+  ],
+  "discount": {
+    "productId": "123",
+    "thumb": "/assets/img/discount-bg4.jpg",
+    "silentText": "Perfume",
+    "title": "about aromas in more detail",
+    "subTitle": "In 1990, the French Perfume Committee approved the following classification:",
+    "attributes": [
+      {
+        "title": "Citrus",
+        "content": "based on essential oils of orange, tangerine and bergamot"
+      },
+      {
+        "title": "Floral",
+        "content": "based on the essence of fresh flowers: roses, jasmine, lilac and others"
+      },
+      {
+        "title": "Woody",
+        "content": "based on the essential oils of sandalwood, cedar, goldenrod"
+      },
+      {
+        "title": "Oriental",
+        "content": "based on musk, amber, cinnamon and coriander"
+      },
+      {
+        "title": "Leather",
+        "content": "fragrances based on animal skin"
+      },
+      {
+        "title": "Shiprovi",
+        "content": "contain incense, oakmoss, patchouli"
+      },
+      {
+        "title": "Wine glasses",
+        "content": "complex aromas with wood moss, lavender and coumarin."
+      }
+    ]
+  },
+  "contentThree": "Ea amet ex sunt culpa mollit. Aliquip proident ullamco do laboris eiusmod aute ullamco. Duis cupidatat magna excepteur laborum consectetur tempor nulla consectetur dolor consequat incididunt. Veniam ut ut aliquip voluptate fugiat velit laboris. Amet cupidatat nulla voluptate cillum sint nostrud amet aute duis labore minim ipsum. Adipisicing veniam laboris non irure in esse ex aliqua duis eiusmod anim ea. Nostrud consectetur veniam ea officia. Id eu cillum quis ullamco eiusmod in ullamco officia in incididunt sit amet. Anim ullamco excepteur in nisi irure in pariatur. Incididunt anim pariatur pariatur sunt mollit excepteur esse ea sint sit Lorem enim. Consectetur occaecat ut consequat tempor anim proident eu mollit exercitation mollit proident Lorem. Reprehenderit amet ipsum.",
+  "tags": [
+    {
+      "title": "Perfume",
+      "categoryId": "123"
+    },
+    {
+      "title": "Make up",
+      "categoryId": "124"
+    },
+    {
+      "title": "Spa",
+      "categoryId": "125"
+    }
+  ],
+  "comments": [
+    {
+      "authorName": "Melissa Jones",
+      "date": "July 17, 2020",
+      "authorImage": "/assets/img/comment-author1.jpg",
+      "content": "I am grateful to the employees of BeShop for the quality products that I have been using for more than a year, try to work at this level in the future. Thank you",
+      "answers": [
+        {
+          "authorName": "Steve Gentley",
+          "date": "July 03, 2020",
+          "authorImage": "/assets/img/comment-author2.jpg",
+          "content": "I am grateful to the employees of BeShop for the quality products that I have been using for more than a year, try to work at this level in the future. Thank you"
+        }
+      ]
+    },
+    {
+      "authorName": "Melissa Jones",
+      "date": "July 17, 2020",
+      "authorImage": "/assets/img/comment-author3.jpg",
+      "content": "I am grateful to the employees of BeShop for the quality products that I have been using for more than a year, try to work at this level in the future. Thank you",
+      "answers": []
+    }
+  ]
+}

@@ -1,0 +1,267 @@
+.user {
+    flex: 4;
+    padding: 20px;
+  }
+  .userContainer {
+    display: flex;
+    margin-top: 20px;
+  
+  }
+  
+  .userShow {
+    flex: 1;
+    padding: 30px;
+    padding-right: 150px;
+    -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+    background-color: var(--color-bg-secondry);
+    border-radius: 1rem;
+  }
+  
+  .userUpdate {
+    flex: 1.5;
+    padding: 20px;
+    -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+    margin-left: 20px;
+    background-color: var(--color-bg-secondry);
+    border-radius: 1rem;
+  }
+  
+  .userShowTop {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+  }
+  
+  .userShowImg {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .userShowTopTitle {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    font-size: 22px;
+  }
+  
+  .userShowUsername {
+    font-weight: 600;
+  }
+  
+  
+  .userShowBottom {
+    margin-top: 20px;
+  }
+  
+  .userShowTitle {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--color-secondry)
+  }
+  
+  .userShowInfo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 3rem;
+    margin: 20px 0px;
+  }
+  
+  .userUpdateTitle {
+    font-size: 24px;
+    font-weight: 600;
+  }
+  
+  .userUpdateForm {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .userUpdateItem {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+  
+  .userUpdateItem>label {
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  .userUpdateInput {
+    border-bottom: 1px solid var(--color-primery);
+    border-radius: 5px;
+    width: 350px;
+    height: 40px;
+  }
+  
+  .userUpdateInput::placeholder {
+    font-size: 16px;
+  }
+  
+  .userUpdateSelect{
+    border: 1px solid var(--color-primery);
+    border-radius: 5px;
+    width: 350px;
+    height: 40px;
+  }
+  .adressSplit {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+  }
+  
+  .userUpdateRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .userUpdateButton {
+    border-radius: 5px;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    background-color: var(--color-primery);
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+  }.user {
+  flex: 4;
+  padding: 20px;
+}
+.userContainer {
+  display: flex;
+  margin-top: 20px;
+
+}
+
+.userShow {
+  flex: 1;
+  padding: 30px;
+  padding-right: 150px;
+  -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  background-color: var(--color-bg-secondry);
+  border-radius: 1rem;
+}
+
+.userUpdate {
+  flex: 1.5;
+  padding: 20px;
+  -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  margin-left: 20px;
+  background-color: var(--color-bg-secondry);
+  border-radius: 1rem;
+}
+
+.userShowTop {
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+}
+
+.userShowImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.userShowTopTitle {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  font-size: 22px;
+}
+
+.userShowUsername {
+  font-weight: 600;
+}
+
+
+.userShowBottom {
+  margin-top: 20px;
+}
+
+.userShowTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-secondry)
+}
+
+.userShowInfo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 3rem;
+  margin: 20px 0px;
+}
+
+.userUpdateTitle {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.userUpdateForm {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.userUpdateItem {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.userUpdateItem>label {
+  margin-bottom: 5px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.userUpdateInput {
+  border-bottom: 1px solid var(--color-primery);
+  border-radius: 5px;
+  width: 350px;
+  height: 40px;
+}
+
+.userUpdateInput::placeholder {
+  font-size: 16px;
+}
+
+.userUpdateSelect{
+  border: 1px solid var(--color-primery);
+  border-radius: 5px;
+  width: 350px;
+  height: 40px;
+}
+.adressSplit {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.userUpdateRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.userUpdateButton {
+  border-radius: 5px;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  background-color: var(--color-primery);
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+}

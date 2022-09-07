@@ -1,0 +1,742 @@
+[
+  {
+    "name": "Black and White Black forest Cake",
+    "oldPrice": "1450",
+    "price": "1200",
+    "id": "1",
+    "isSale": true,
+    "isNew": false,
+    "image": "/assets/img/products/product_11.jpg",
+    "category": "Chocolate",
+    "filterItems": ["Chocolate", "cakes"],
+    "isStocked": true,
+    "productNumber": "1",
+    "imageGallery": [
+      "/assets/img/products/product_11.jpg",
+      "/assets/img/products/product_12.jpg",
+      "/assets/img/products/product_13.jpg",
+      "/assets/img/products/product_14.jpg"
+    ],
+    "colors": [
+      "#FCEDEA",
+      "#FEE1DB",
+      "#FFD9D1",
+      "#FDC5B9",
+      "#FDB7A8",
+      "#FFA08A"
+    ],
+    "content": "No matter what the occasion is, Blackforest cake always stands out! A spongy base wrapped in melted chocolate, adorned with vanilla frosting top every cake lover's list of taste buds! If any special occasion like birthday or anniversary is on the calendar, order this luscious black forest bonanza cake.",
+    "description": "No matter what the occasion is, Blackforest cake always stands out! A spongy base wrapped in melted chocolate, adorned with vanilla frosting top every cake lover's list of taste buds! If any special occasion like birthday or anniversary is on the calendar, order this luscious black forest bonanza cake.",
+    "reviews": [
+      {
+        "author": {
+          "image": "/assets/img/comment-author1.jpg",
+          "name": "Anum Arshad"
+        },
+        "reviewDate": "Feb 23, 2022",
+        "rating": 4,
+        "content": "Beautiful cake, the cake looks exactly as advertised on the website. It was a gift and I received a photo of the cake from the receiver and also, was told the cake was delicious!. Delivery was also on time. "
+      },
+      {
+        "author": {
+          "image": "/assets/img/comment-author3.jpg",
+          "name": "Sana Khan"
+        },
+        "reviewDate": "March 15, 2022",
+        "rating": 5,
+        "content": "Cake is delicious and delivered as per instructions. Great!! Thank you bake and Take Team. "
+      }
+    ]
+  },
+  {
+    "name": "Exotic Layer Black Forest Cake",
+    "oldPrice": "1700",
+    "price": "1300",
+    "id": "2",
+    "isSale": true,
+    "isNew": false,
+    "image": "/assets/img/products/product_21.jpg",
+    "category": "Chocolate",
+    "filterItems": ["Chocolate","cakes"],
+
+    "isStocked": true,
+    "productNumber": "2",
+
+    "imageGallery": [
+      "/assets/img/products/product_22.jpg",
+      "/assets/img/products/product_23.jpg",
+      "/assets/img/products/product_21.jpg",
+      "/assets/img/products/product_24.jpg"
+    ],
+    "colors": [
+      "#FCEDEA",
+      "#FEE1DB",
+      "#FFD9D1",
+      "#FDC5B9",
+      "#FDB7A8",
+      "#FFA08A"
+    ],
+    "content": "Are you cakeoholic? The chocolate shavings of this dainty black forest cake make it forgiving for those who are truly cake-obsessed. Dive in the delicious taste of this amazing and classic cake and make every celebration worth celebrating. An evergreen cake suitable for every occasion be it a birthday, anniversary or any house party.",
+    "description": "Are you cakeoholic? The chocolate shavings of this dainty black forest cake make it forgiving for those who are truly cake-obsessed. Dive in the delicious taste of this amazing and classic cake and make every celebration worth celebrating. An evergreen cake suitable for every occasion be it a birthday, anniversary or any house party.",
+    "reviews": [
+      {
+        "author": {
+          "image": "/assets/img/comment-author1.jpg",
+          "name": "Fatima Hafeez"
+        },
+        "reviewDate": "Feb 23, 2022",
+        "rating": 4,
+        "content": "Fresh and tasty. Thanks to BAKE AND TAKE. Delivered in time.regards "
+      },
+      {
+        "author": {
+          "image": "/assets/img/comment-author2.jpg",
+          "name": "Bilal Ahmad"
+        },
+        "reviewDate": "March 15, 2022",
+        "rating": 5,
+        "content": "it was ordered on time and taste was amazing! thank you "
+      }
+    ]
+  },
+  {
+    "name": "Black Forest Cake With Cherries",
+    "oldPrice": "1900",
+    "price": "1600",
+    "id": "3",
+    "isSale": false,
+    "isNew": true,
+    "image": "/assets/img/products/product_31.jpg",
+    "category": "Birthday",
+    "filterItems": ["Birthday" ,"Chocolate", "cakes"],
+    "isStocked": true,
+    "productNumber": "3",
+    "imageGallery": [
+      "/assets/img/products/product_32.jpg",
+      "/assets/img/products/product_33.jpg",
+      "/assets/img/products/product_31.jpg",
+      "/assets/img/products/product_34.jpg"
+    ],
+    "colors": [
+      "#FCEDEA",
+      "#FEE1DB",
+      "#FFD9D1",
+      "#FDC5B9",
+      "#FDB7A8",
+      "#FFA08A"
+    ],
+    "content": "We kept this Classic cake untouched and unblemished because we feel it's perfect as it is. Baked with the richness of cocoa and lusciousness of fresh vanilla cream, topped with soft chocolate shavings and fresh cherries, this delicious cake will make you surrender to the zest forces of Sweet Indulgence. Savour the original taste of the all time classic- The Black Forest.",
+    "description": "We kept this Classic cake untouched and unblemished because we feel it's perfect as it is. Baked with the richness of cocoa and lusciousness of fresh vanilla cream, topped with soft chocolate shavings and fresh cherries, this delicious cake will make you surrender to the zest forces of Sweet Indulgence. Savour the original taste of the all time classic- The Black Forest.",
+    "reviews": [
+      {
+        "author": {
+          "image": "/assets/img/comment-author1.jpg",
+          "name": "Rana Aslam"
+        },
+        "reviewDate": "Jan 29, 2021",
+        "rating": 4,
+        "content": "Delivery is always on time and the cakes are always fresh. B&T will always be my first choice when it comes to cakes. Keep it up! ❤? "
+      },
+      {
+        "author": {
+          "image": "/assets/img/comment-author3.jpg",
+          "name": "Fiza Hamid"
+        },
+        "reviewDate": "April 17, 2020",
+        "rating": 5,
+        "content": "Yummy Cake...!!!. "
+      }
+    ]
+  },
+  {
+    "name": "Heart Shaped Black Forest Delight",
+    "oldPrice": "2000",
+    "price": "1950",
+    "id": "4",
+    "isSale": true,
+    "isNew": false,
+    "image": "/assets/img/products/product_41.jpg",
+    "category": "Aniversary",
+    "filterItems": ["Aniversary", "cakes"],
+    "isStocked": true,
+    "productNumber": "4",
+    "imageGallery": [
+      "/assets/img/products/product_42.jpg",
+      "/assets/img/products/product_43.jpg",
+      "/assets/img/products/product_41.jpg",
+      "/assets/img/products/product_44.jpg"
+    ],
+    "colors": [
+      "#FCEDEA",
+      "#FEE1DB",
+      "#FFD9D1",
+      "#FDC5B9",
+      "#FDB7A8",
+      "#FFA08A"
+    ],
+    "content": "A luscious heart-shaped black forest cake that looks no less than a chocolate paradise. Yes, this heart-shaped cake black forest cake has been baked and infused with three layers of mushy and creamy cake. Garnished with yummlicious chocolate flakes on the top and by the sides, this cake is embellished with luscious cherries as well. Enjoy a sweet escape to the chocolatey world by ordering this cake on your every special occasion.",
+    "description": "A luscious heart-shaped black forest cake that looks no less than a chocolate paradise. Yes, this heart-shaped cake black forest cake has been baked and infused with three layers of mushy and creamy cake. Garnished with yummlicious chocolate flakes on the top and by the sides, this cake is embellished with luscious cherries as well. Enjoy a sweet escape to the chocolatey world by ordering this cake on your every special occasion.",
+    "reviews": [
+      {
+        "author": {
+          "image": "/assets/img/comment-author1.jpg",
+          "name": "Hafsa Ameen"
+        },
+        "reviewDate": "October 2, 2020",
+        "rating": 4,
+        "content": "The taste was yummm..thanks so much to deliver such a nice cake, it was as same as that of the picture shown on to your website. "
+      },
+      {
+        "author": {
+          "image": "/assets/img/comment-author3.jpg",
+          "name": "Sana Khan"
+        },
+        "reviewDate": "June 9, 2019",
+        "rating": 5,
+        "content": "very yum cake"
+      }
+    ]
+  },
+  {
+    "name": "Choco Cherry Black Forest Cake",
+    "oldPrice": "2700",
+    "price": "2200",
+    "id": "5",
+    "isSale": true,
+    "isNew": false,
+    "image": "/assets/img/products/product_51.jpg",
+    "category": "Birthday",
+    "filterItems": [ "Birthday" ,"cakes"],
+    "isStocked": true,
+    "productNumber": "5",
+    "imageGallery": [
+      "/assets/img/products/product_53.jpg",
+      "/assets/img/products/product_52.jpg",
+      "/assets/img/products/product_54.jpg",
+      "/assets/img/products/product_51.jpg"
+    ],
+    "colors": [
+      "#FCEDEA",
+      "#FEE1DB",
+      "#FFD9D1",
+      "#FDC5B9",
+      "#FDB7A8",
+      "#FFA08A"
+    ],
+    "content": "Wrap your favourite people with your love and satiate their taste buds on their birthday with these incredibly delicious black forest cake covered with rich cream and choco moulds and cherry on the top. With choco shaving adorning the sides, it turns out a perfect birthday cake to offer.",
+    "description": "Wrap your favourite people with your love and satiate their taste buds on their birthday with these incredibly delicious black forest cake covered with rich cream and choco moulds and cherry on the top. With choco shaving adorning the sides, it turns out a perfect birthday cake to offer.",
+    "reviews": [
+      {
+        "author": {
+          "image": "/assets/img/comment-author1.jpg",
+          "name": "Rabia Saleem"
+        },
+        "reviewDate": "May 23, 2020",
+        "rating": 4,
+        "content": "Beautiful cake withe awesome taste "
+      },
+      {
+        "author": {
+          "image": "/assets/img/comment-author2.jpg",
+          "name": "Mujahid Panhwer"
+        },
+        "reviewDate": "September 15, 2022",
+        "rating": 5,
+        "content": "Super soft super tasty Love Bake & Take! "
+      }
+    ]
+  },
+  {
+    "name": "Half Chocolate Half Vanilla Cake",
+    "oldPrice": "2000",
+    "price": "1750",
+    "id": "6",
+    "isSale": true,
+    "isNew": true,
+    "image": "/assets/img/products/product_61.jpg",
+    "category": "Chocolate",
+    "filterItems": ["Chocolate", "Birthday", "cakes"],
+    "isStocked": true,
+    "productNumber": "6",
+    "imageGallery": [
+      "/assets/img/products/product_62.jpg",
+      "/assets/img/products/product_63.jpg",
+      "/assets/img/products/product_64.jpg",
+      "/assets/img/products/product_61.jpg"
+    ],
+    "colors": [
+      "#FCEDEA",
+      "#FEE1DB",
+      "#FFD9D1",
+      "#FDC5B9",
+      "#FDB7A8",
+      "#FFA08A"
+    ],
+    "content": "A toothsome treat for the sugar lovers who are just passionate about chocolate and relish the mushiness of cake. Made of two layers of impossibly moist chocolate filled with mushy rich cream, this cake carries the enticing aroma of Vanilla and sumptuousness of chocolate. On top of it, the cake is garnished with handcrafted white and brown chocolate. Need I say more?",
+    "description": "A toothsome treat for the sugar lovers who are just passionate about chocolate and relish the mushiness of cake. Made of two layers of impossibly moist chocolate filled with mushy rich cream, this cake carries the enticing aroma of Vanilla and sumptuousness of chocolate. On top of it, the cake is garnished with handcrafted white and brown chocolate. Need I say more?",
+    "reviews": [
+      {
+        "author": {
+          "image": "/assets/img/comment-author1.jpg",
+          "name": "Aysha Maqbool"
+        },
+        "reviewDate": "Dec 15, 2021",
+        "rating": 4,
+        "content": "Nice service, just order and forget. The team would take care of the delivery. No reminders required. Like the experience. Would highly recommend. Thank you! "
+      },
+      {
+        "author": {
+          "image": "/assets/img/comment-author3.jpg",
+          "name": "Abdul Samad"
+        },
+        "reviewDate": "Feb 1, 2020",
+        "rating": 5,
+        "content": "Very happy with the quality of cake and service. Will come back to you next time for sure "
+      }
+    ]
+  },
+  {
+    "name": "Chocolate Marble Cake",
+    "oldPrice": "1960",
+    "price": "1890",
+    "id": "7",
+    "isSale": false,
+    "isNew": true,
+    "image": "/assets/img/products/product_71.jpg",
+    "category": "Birthday",
+    "filterItems": ["Birthday", "cakes", "Chocolate"],
+    "isStocked": true,
+    "productNumber": "7",
+    "imageGallery": [
+      "/assets/img/products/product_72.jpg",
+      "/assets/img/products/product_73.jpg",
+      "/assets/img/products/product_71.jpg",
+      "/assets/img/products/product_74.jpg"
+    ],
+    "colors": [
+      "#FCEDEA",
+      "#FEE1DB",
+      "#FFD9D1",
+      "#FDC5B9",
+      "#FDB7A8",
+      "#FFA08A"
+    ],
+    "content": "Here's a delicious treat for all the chocolate and health lovers. Layered with an alluring fresh cream supported by some chocolate chips all around. It is certain that one who eats once craves for more. Order this delicious desert and make any day special.",
+    "description": "Here's a delicious treat for all the chocolate and health lovers. Layered with an alluring fresh cream supported by some chocolate chips all around. It is certain that one who eats once craves for more. Order this delicious desert and make any day special.",
+    "reviews": [
+      {
+        "author": {
+          "image": "/assets/img/comment-author1.jpg",
+          "name": "Salman Faisal"
+        },
+        "reviewDate": "Nov 28, 2021",
+        "rating": 4,
+        "content": "Super delicious cake as always. Thankyou for making our all the events so special with your yummilicious, fresh and soft cakes. "
+      },
+      {
+        "author": {
+          "image": "/assets/img/comment-author3.jpg",
+          "name": "Rimsha Sultan"
+        },
+        "reviewDate": "March 3, 2020",
+        "rating": 5,
+        "content": "Delivered as scheduled after a small confusion. Most important the taste was good and my family loved it. "
+      }
+    ]
+  },
+  {
+    "name": "Red Velvet Cake With Choco Sticks",
+    "oldPrice": "2300",
+    "price": "2000",
+    "id": "8",
+    "isSale": false,
+    "isNew": true,
+    "image": "/assets/img/products/product_81.jpg",
+    "category": "Aniversary",
+    "filterItems": ["Aniversary", "Aniversary", "cakes"],
+    "isStocked": true,
+    "productNumber": "8",
+    "imageGallery": [
+      "/assets/img/products/product_84.jpg",
+      "/assets/img/products/product_83.jpg",
+      "/assets/img/products/product_81.jpg",
+      "/assets/img/products/product_82.jpg"
+    ],
+    "colors": [
+      "#FCEDEA",
+      "#FEE1DB",
+      "#FFD9D1",
+      "#FDC5B9",
+      "#FDB7A8",
+      "#FFA08A"
+    ],
+    "content": "Fill up on a yummy, creamy, frosted Red Velvet sprinkled cake with an evergreen classic vanilla icing base with not cherry but some much delicious chocolate sticks on top. Caught in the vicious cycle of not being able to quit this taste-savvy treat, don’t forget to share this piece of goodness with your special ones too.",
+    "description": "Fill up on a yummy, creamy, frosted Red Velvet sprinkled cake with an evergreen classic vanilla icing base with not cherry but some much delicious chocolate sticks on top. Caught in the vicious cycle of not being able to quit this taste-savvy treat, don’t forget to share this piece of goodness with your special ones too.",
+    "reviews": [
+      {
+        "author": {
+          "image": "/assets/img/comment-author1.jpg",
+          "name": "Doha Abdullah"
+        },
+        "reviewDate": "April 18, 2021",
+        "rating": 4,
+        "content": "Fresh and delicious. Kids and adult loves the cake. "
+      },
+      {
+        "author": {
+          "image": "/assets/img/comment-author3.jpg",
+          "name": "Mahnoor Hashmi"
+        },
+        "reviewDate": "March 15, 2022",
+        "rating": 5,
+        "content": "Beautiful cake, Great taste. "
+      }
+    ]
+  },
+  {
+    "name": "Anniversary Theme Cake",
+    "oldPrice": "2200",
+    "price": "2100",
+    "id": "9",
+    "isSale": true,
+    "isNew": false,
+    "image": "/assets/img/products/product_91.jpg",
+    "category": "Aniversary",
+    "filterItems": ["Aniversary","cakes"],
+    "isStocked": true,
+    "productNumber": "9",
+    "imageGallery": [
+      "/assets/img/products/product_94.jpg",
+      "/assets/img/products/product_93.jpg",
+      "/assets/img/products/product_91.jpg",
+      "/assets/img/products/product_92.jpg"
+    ],
+    "colors": [
+      "#FCEDEA",
+      "#FEE1DB",
+      "#FFD9D1",
+      "#FDC5B9",
+      "#FDB7A8",
+      "#FFA08A"
+    ],
+    "content": "let your love bloom with each passing day as you choose to surprise him/her over this hearty caricature vanilla cake. Imitating your confession of love, this cake is sure to make him/her fall in love with you, all over again. Order now and express your love in the sweetest most manner over this drool-worthy cake.",
+    "description": "let your love bloom with each passing day as you choose to surprise him/her over this hearty caricature vanilla cake. Imitating your confession of love, this cake is sure to make him/her fall in love with you, all over again. Order now and express your love in the sweetest most manner over this drool-worthy cake.",
+    "reviews": [
+      {
+        "author": {
+          "image": "/assets/img/comment-author1.jpg",
+          "name": "Arshad Faheem"
+        },
+        "reviewDate": "August 11, 2020",
+        "rating": 5,
+        "content": "This is my first time ..cake was fresh , taste was amazing and it was delivered on time. "
+      },
+      {
+        "author": {
+          "image": "/assets/img/comment-author3.jpg",
+          "name": "Zahra Murtaza"
+        },
+        "reviewDate": "Jan 8, 2022",
+        "rating": 4,
+        "content": "The cake was delivered on time without any damage.The taste of cake was good too. If i have to consider cake in future also, then i will order cake from bakingo itself. "
+      }
+    ]
+  },
+
+  {
+    "name": "Delicious White Forest Glaze Cake ",
+    "oldPrice": "1100",
+    "price": "900",
+    "id": "10",
+    "isSale": true,
+    "isNew": true,
+    "image": "/assets/img/products/product_01.jpg",
+    "category": "Birthday",
+    "filterItems": ["Birthday", "cakes", "Aniversary"],
+    "isStocked": true,
+    "productNumber": "10",
+    "imageGallery": [
+      "/assets/img/products/product_01.jpg",
+      "/assets/img/products/product_02.jpg",
+      "/assets/img/products/product_03.jpg",
+      "/assets/img/products/product_04.jpg"
+    ],
+    "colors": [
+      "#FCEDEA",
+      "#FEE1DB",
+      "#FFD9D1",
+      "#FDC5B9",
+      "#FDB7A8",
+      "#FFA08A"
+    ],
+    "content": "The White Forest Glaze cake is ready to be served any time and for any occasion. This cake has a white sponge and white chocolate frosting and will make your mouth water at first sight and smell. The perfect cake for any occasion, this White Forest Glaze cake is covered in a light chocolate glaze and made with rich cream. Each slice will make your mouth water for more.",
+    "description": "The White Forest Glaze cake is ready to be served any time and for any occasion. This cake has a white sponge and white chocolate frosting and will make your mouth water at first sight and smell. The perfect cake for any occasion, this White Forest Glaze cake is covered in a light chocolate glaze and made with rich cream. Each slice will make your mouth water for more.",
+    "reviews": [
+      {
+        "author": {
+          "image": "/assets/img/comment-author1.jpg",
+          "name": "Tabusum Fathi"
+        },
+        "reviewDate": "Sap 13, 2021",
+        "rating": 4,
+        "content": "Thank you for bringing beautiful cake in one piece☺️loved the taste and super yumyyyyyy. "
+      },
+      {
+        "author": {
+          "image": "/assets/img/comment-author3.jpg",
+          "name": "Fuad Chudery"
+        },
+        "reviewDate": "Nov 2, 2022",
+        "rating": 5,
+        "content": "Everything was good. Delicious cake. Packaging was also Nice."
+      }
+    ]
+  },
+  {
+    "name": "Round Pink Roses Vanilla Cake",
+    "oldPrice": "1800",
+    "price": "1750",
+    "id": "11",
+    "isSale": true,
+    "isNew": true,
+    "image": "/assets/img/products/product_101.jpg",
+    "category": "aniversary",
+    "filterItems": ["Aniversary", "cupcakes", "birthday"],
+    "isStocked": true,
+    "productNumber": "11",
+    "imageGallery": [
+      "/assets/img/products/product_101.jpg",
+      "/assets/img/products/product_102.jpg",
+      "/assets/img/products/product_103.jpg",
+      "/assets/img/products/product_104.jpg"
+    ],
+    "colors": [
+      "#FCEDEA",
+      "#FEE1DB",
+      "#FFD9D1",
+      "#FDC5B9",
+      "#FDB7A8",
+      "#FFA08A"
+    ],
+    "content": "This toothsome strawberry rose is a divine three-layered dessert filled with rich strawberry cream and crushed strawberries. With roses carved on its contours and strawberry cream icing, why give the same old bouquet to your loved ones when you can be one step ahead with this ambrosial strawberry!",
+    "description": "This toothsome strawberry rose is a divine three-layered dessert filled with rich strawberry cream and crushed strawberries. With roses carved on its contours and strawberry cream icing, why give the same old bouquet to your loved ones when you can be one step ahead with this ambrosial strawberry!",
+    "reviews": [
+      {
+        "author": {
+          "image": "/assets/img/comment-author1.jpg",
+          "name": "Khurshed Mnaan"
+        },
+        "reviewDate": "Feb 23, 2022",
+        "rating": 4,
+        "content": "This is the second time I have ordered Pink Roses Vanilla Cake it was delicious and loved by everyone. Thank you. "
+      },
+      {
+        "author": {
+          "image": "/assets/img/comment-author3.jpg",
+          "name": "Zubair Akrem"
+        },
+        "reviewDate": "March 15, 2022",
+        "rating": 5,
+        "content": "Beautiful cake, the cake looks exactly as advertised on the website. It was a gift and I received a photo of the cake from the receiver and also, was told the cake was delicious!. Delivery was also on time. "
+      }
+    ]
+  },
+  {
+    "name": "Multi Flavoured Heart Shaped Photo Cake",
+    "oldPrice": "2500",
+    "price": "2300",
+    "id": "12",
+    "isSale": false,
+    "isNew": true,
+    "image": "/assets/img/products/product_111.jpg",
+    "category": "Aniversary",
+    "filterItems": ["cakes", "Aniversary"],
+    "isStocked": true,
+    "productNumber": "12",
+    "imageGallery": [
+      "/assets/img/products/product_111.jpg",
+      "/assets/img/products/product_112.jpg",
+      "/assets/img/products/product_113.jpg",
+      "/assets/img/products/product_114.jpg"
+    ],
+    "colors": [
+      "#FCEDEA",
+      "#FEE1DB",
+      "#FFD9D1",
+      "#FDC5B9",
+      "#FDB7A8",
+      "#FFA08A"
+    ],
+    "content": "Get something unique and amazing for your beloved partner. This love-shaped multi flavour cake will instantly level up the romantic vibes. This soft and creamy cake has a photo print over it and also decked up with a soothing floral design on the top. Order this delightful cake right away.",
+    "description": "Get something unique and amazing for your beloved partner. This love-shaped multi flavour cake will instantly level up the romantic vibes. This soft and creamy cake has a photo print over it and also decked up with a soothing floral design on the top. Order this delightful cake right away.",
+    "reviews": [
+      {
+        "author": {
+          "image": "/assets/img/comment-author1.jpg",
+          "name": "Sania Mehmood"
+        },
+        "reviewDate": "Feb 7, 2020",
+        "rating": 4,
+        "content": "Awesome cake. Fresh and moist. Must recommended. "
+      },
+      {
+        "author": {
+          "image": "/assets/img/comment-author3.jpg",
+          "name": "Hamza Waheed"
+        },
+        "reviewDate": "Jan 19, 2022",
+        "rating": 5,
+        "content": "Thank you for such a beautiful and delicious cake❤ "
+      }
+    ]
+  },
+
+  {
+    "name": "Little Hearts Filled Cup cakes",
+    "oldPrice": "1200",
+    "price": "1000",
+    "id": "13",
+    "isSale": true,
+    "isNew": false,
+    "image": "/assets/img/products/product_121.jpg",
+    "category": "Cupcakes",
+    "filterItems": ["Cupcakes", "Birthday", "cupcakes", "Aniversary"],
+    "isStocked": true,
+    "productNumber": "13",
+    "imageGallery": [
+      "/assets/img/products/product_121.jpg",
+      "/assets/img/products/product_122.jpg",
+      "/assets/img/products/product_123.jpg",
+      "/assets/img/products/product_124.jpg"
+    ],
+    "colors": [
+      "#FCEDEA",
+      "#FEE1DB",
+      "#FFD9D1",
+      "#FDC5B9",
+      "#FDB7A8",
+      "#FFA08A"
+    ],
+    "content": "Relish the euphoric flavours of cupcakes and commemorate each moment with the toothsome delicacies we have brought for you. This is a set of cupcakes adorned with pink cream, sprinkles and little hearts giving major valentine vibes in this season of love. So, order today and satiate your loved one's sweet tooth with it.",
+    "description": "Relish the euphoric flavours of cupcakes and commemorate each moment with the toothsome delicacies we have brought for you. This is a set of cupcakes adorned with pink cream, sprinkles and little hearts giving major valentine vibes in this season of love. So, order today and satiate your loved one's sweet tooth with it.",
+    "reviews": [
+      {
+        "author": {
+          "image": "/assets/img/comment-author1.jpg",
+          "name": "Asma Firdus"
+        },
+        "reviewDate": "May 16, 2022",
+        "rating": 4,
+        "content": "Ordered this cake for of my bhabhi's birthday and thank you B&T for making it so special. "
+      },
+      {
+        "author": {
+          "image": "/assets/img/comment-author3.jpg",
+          "name": "Sana Khan"
+        },
+        "reviewDate": "Oct 19, 2021",
+        "rating": 5,
+        "content": "Awesome taste and Birthday boy loved the taste and guest also loved it... Thanks for the delicious cake... This my first experience withbake and take and it's really amazing I must say."
+      }
+    ]
+  },
+
+  {
+    "name": "Cream N Blueberry Cupcakes",
+    "oldPrice": "1340",
+    "price": "1100",
+    "id": "14",
+    "isSale": true,
+    "isNew": true,
+    "image": "/assets/img/products/product_131.jpg",
+    "category": "Cupcakes",
+    "filterItems": ["Cupcakes", "cakes", "cupcakes"],
+    "isStocked": true,
+    "productNumber": "14",
+    "imageGallery": [
+      "/assets/img/products/product_131.jpg",
+      "/assets/img/products/product_132.jpg",
+      "/assets/img/products/product_133.jpg",
+      "/assets/img/products/product_134.jpg"
+    ],
+    "colors": [
+      "#FCEDEA",
+      "#FEE1DB",
+      "#FFD9D1",
+      "#FDC5B9",
+      "#FDB7A8",
+      "#FFA08A"
+    ],
+    "content": "Get lost in the sweet scrumptiousness of cupcakes to satisfy your sweet hunger pangs. Order from us a set of two freshly-baked cupcakes topped with delicous whipped cream with blueberry puree on it along with the final touch of some colourful sprinkles.",
+    "description": "Get lost in the sweet scrumptiousness of cupcakes to satisfy your sweet hunger pangs. Order from us a set of two freshly-baked cupcakes topped with delicous whipped cream with blueberry puree on it along with the final touch of some colourful sprinkles.",
+    "reviews": [
+      {
+        "author": {
+          "image": "/assets/img/comment-author1.jpg",
+          "name": "Momina Afzal"
+        },
+        "reviewDate": "july 5, 2022",
+        "rating": 4,
+        "content": "Surprisingly, the cake was delivered within an hour of order..Thanks much "
+      },
+      {
+        "author": {
+          "image": "/assets/img/comment-author3.jpg",
+          "name": "Safwan Abbasi"
+        },
+        "reviewDate": "August 5, 2022",
+        "rating": 5,
+        "content": "Top notch cake, My family loved the cake. Thank you for making the occasion great. "
+      }
+    ]
+  },
+  {
+    "name": "Set Of 6 Chocolate Cupcakes For Dad",
+    "oldPrice": "1480",
+    "price": "1300",
+    "id": "15",
+    "isSale": true,
+    "isNew": true,
+    "image": "/assets/img/products/product_141.jpg",
+    "category": "Cupcakes",
+    "filterItems": ["Cupcakes", "cupcakes", "Birthday"],
+    "isStocked": true,
+    "productNumber": "15",
+    "imageGallery": [
+      "/assets/img/products/product_141.jpg",
+      "/assets/img/products/product_142.jpg",
+      "/assets/img/products/product_143.jpg",
+      "/assets/img/products/product_144.jpg"
+    ],
+    "colors": [
+      "#FCEDEA",
+      "#FEE1DB",
+      "#FFD9D1",
+      "#FDC5B9",
+      "#FDB7A8",
+      "#FFA08A"
+    ],
+    "content": "When it comes to expressing love to parents, we convey it more easily to our mothers than fathers. But, a child's love for his/her dad is no less than that of a mother. Of all the ways you can say I Love You to him; choose to say over these six fondant cupcakes that reads DAD I Love You",
+    "description": "When it comes to expressing love to parents, we convey it more easily to our mothers than fathers. But, a child's love for his/her dad is no less than that of a mother. Of all the ways you can say I Love You to him; choose to say over these six fondant cupcakes that reads DAD I Love You",
+    "reviews": [
+      {
+        "author": {
+          "image": "/assets/img/comment-author1.jpg",
+          "name": "Rehman Aslem"
+        },
+        "reviewDate": "July 11, 2022",
+        "rating": 4,
+        "content": "The cake was really delicious and exactly as described. "
+      },
+      {
+        "author": {
+          "image": "/assets/img/comment-author3.jpg",
+          "name": "Zainb Sultan"
+        },
+        "reviewDate": "Dec 9, 2021",
+        "rating": 5,
+        "content": "Ordered a cake from there place and it was hands down the best cake I have ever had. It was creamy and tasty in all the right ways. "
+      }
+    ]
+  }
+]

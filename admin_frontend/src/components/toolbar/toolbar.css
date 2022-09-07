@@ -1,0 +1,60 @@
+.bt-toolbar {
+  min-width: var(--sidebar-width);
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: var(--color-primery);
+  box-shadow: var(--box-shadow);
+}
+.bt-toolbar-brand {
+  background-color: var(--color-bg-primery);
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bt-toolbar-brand img {
+  width: 100px;
+  height: 100px;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.links ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 10px;
+}
+.links li :hover {
+  background-color: var(--color-secondry);
+  color: var(--color-subtext);
+  border-radius: 1rem;
+  margin-left: 5px;
+}
+.links a {
+  display: flex;
+  gap: 1rem;
+  color: var(--color-text);
+  font-size: 22px;
+  padding: 0.6rem 1rem;
+  width: 280px;
+}
+
+.active {
+  background-color: var(--color-secondry);
+  color: var(--color-subtext);
+  border-radius: 1rem;
+  width: 280px;
+  margin-left: 10px;
+}
+.active a {
+  color: var(--color-subtext);
+  width: 280px;
+  margin-left: 10px;
+}

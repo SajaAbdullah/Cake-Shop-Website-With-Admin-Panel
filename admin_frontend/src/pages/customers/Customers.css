@@ -1,0 +1,33 @@
+.userTitle{
+  margin-bottom: 1rem;
+  margin-right: 5rem
+}
+.userList {
+  flex: 4;
+  height: 50rem;
+  width: 100%;
+  background-color: var(--color-bg-secondry);
+}
+.column{
+  background-color: var(--color-secondry);
+  font-size: 20px;
+  color: white;
+}
+.userListUser {
+  display: flex;
+  align-items: center;
+}
+
+.userListEdit{
+  cursor: pointer;
+  font-size: 26px;
+  margin: 1rem;
+  
+}
+
+.userListDelete{
+  margin: 1rem;
+  color: red;
+  cursor: pointer;
+  font-size: 26px;
+}

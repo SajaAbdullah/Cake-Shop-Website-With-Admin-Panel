@@ -1,0 +1,3199 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="bundles/design/site_data/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bundles/design/site_data/css/custom.css" rel="stylesheet">
+    <link href="bundles/design/site_data/css/swiper.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="bundles/design/site_data/css/font-awesome.min.css">
+    <link rel="stylesheet" href="bundles/design/site_data/css/hover-min.css">
+     <link rel="stylesheet" href="bundles/design/site_data/css/bootstrap-datetimepicker.min.css">
+      <link rel="stylesheet" type="text/css" href="bundles/design/site_data/fancybox/jquery.fancybox.css">
+	  <link rel="stylesheet" type="text/css" href="./css/header.css" />
+<link rel="shortcut icon"  href="bundles/design/site_data/images/footer-logo.png" />
+
+ <title> Design Your Cake</title>
+
+<script src="bundles/design/site_data/js/jquery.min.js"></script>
+<script src="bundles/design/site_data/js/bootstrap.min.js"></script>
+<script src="bundles/design/site_data/js/swiper.jquery.min.js"></script>
+<script src="bundles/design/site_data/js/custom.js"></script>
+<script src="bundles/design/site_data/js/moment.js"></script>
+<script src="bundles/design/site_data/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../cdnjs.cloudflare.com/ajax/libs/quickblox/2.11.0/quickblox.min.js"></script>
+<!-- google signin -->
+<script>
+
+</script>
+<!-- end: google signin -->
+<style>
+.customGPlusSignIn{
+	cursor: pointer;
+    width: 105px;
+}
+.menu-detail ul li
+{
+    padding: 14px !important;
+}
+.nav>li>a
+{
+    padding:10px 14px;
+}
+.signin-act-btn {
+    background: #24CBBB;
+    color: #fff;
+    display: inline-block;
+    border-radius: 0;
+    text-transform: uppercase;
+    font-size: 19px;
+    margin: 15px 0;
+    float: right;
+}
+.create-act-btn {
+    background: #000;
+    color: #24CBBB;
+    display: block;
+    border-radius: 0;
+    text-transform: uppercase;
+    font-size: 19px;
+    margin: 30px;
+}
+.footer-line .menu-call {
+	width: 230px !important;
+    display: block;
+    background: url(bundles/design/site_data/images/menu-call.png) no-repeat;
+    width: 100%;
+    bottom: 0;
+    padding-top: 65px;
+    background-position: center top;
+}
+.footer-line .menu-call .call1 {
+    font-size: 14px;
+    color: #a7fff7;
+}
+.footer-line .menu-call span {
+    display: block !important;
+    font-family: 'Croissant One', cursive;
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+}
+.footer-line span.call1 {
+    font-size: 24px;
+    font-family: 'Croissant One', cursive;
+    color: #a2a2a2;
+}
+.footer-line span.call2 {
+    /*font-size: 16px;*/
+}
+.top-sign-menu-1 {
+    position: absolute;
+    z-index: 9;
+    right: 79px;
+    background: #fff;
+    top: 47px;
+    width: 26.3%;
+}
+@media screen and (min-width: 1025px) {
+    .top-sign-menu-1 {
+        width: 358px;
+    }
+}
+@media screen and (max-width: 375px) {
+    .top-sign-menu-1 {
+        right: 0;
+        width: 66.3%;
+    }
+}
+@media screen and (max-width: 426px) {
+    .top-sign-menu-1 {
+        right: 0;
+        /*width: 77%;*/
+        width: 280px;
+    }
+}
+@media screen and (max-width: 769px) and (min-width: 427px) {
+    .top-sign-menu-1 {
+        right: 0;
+        width: 40.3%;
+    }
+}
+@media screen and (max-width: 1024px) and (min-width: 770px) {
+    .top-sign-menu-1 {
+        right: 78px;
+        width: 34.7%;
+    }
+}
+@media screen and (max-width: 767px){
+    .header .logo-div {
+        margin: 89px auto 0 auto;
+    }
+}
+</style>
+
+<script>
+
+function validate1()
+{
+// alert("test1");
+    if($("#first_name").val()=='' || $("#last_name").val()=='' || $("#email1").val()=='' || $("#mobile_no").val()=='' || $("#password1").val()=='' || $("#password2").val()=='')
+ {
+    $("#errormsg2").html('<div class="alert alert-danger"> <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><div style="direction:ltr;"><strong>Error!</strong>&nbsp;&nbsp;&nbsp;Please fill up all required fields.</div></div>');
+
+ }
+  else if($('#password1').val() == $('#password2').val())
+  {
+//  alert("test2");
+       if($("#mobile_no").val().length<8)
+       {
+            $("#errormsg2").html('<div class="alert alert-danger"> <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><div style="direction:ltr;"><strong>Error!</strong>&nbsp;&nbsp;&nbsp;Mobile Number Must be 8 or More digit.</div></div>');
+       }else{
+      $.ajax
+      ({
+          type: 'POST',
+          url : "/create_new_account",
+          data: 'first_name='+$("#first_name").val()+'&last_name='+$("#last_name").val()+'&email='+$("#email1").val()+'&mobile_no='+$("#mobile_no").val()+'&password1='+$("#password1").val()+'&password2='+$("#password2").val(),
+          success:function(msg){
+          // alert(msg);
+              if(msg=='success')
+              {
+                   $("#loginModal").modal('hide');
+                   $('#myModal').modal('show');
+                   $(".msg").html("Registration done successfully.");
+                   location.reload();
+              }else{
+
+                   $("#errormsg2").html("<div class='alert alert-danger'> <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><div style='direction:ltr;'><strong>Error!</strong>&nbsp;&nbsp;&nbsp;"+msg+"</div></div>");
+
+                  return false;
+              }
+           return false;
+          }
+      });
+  }
+
+  }
+  else{
+    $("#errormsg2").html("<div class='alert alert-danger'> <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><div style='direction:ltr;'><strong>Error!</strong>&nbsp;&nbsp;&nbsp;Password and Confirm password doesn\'t match.</div></div>");
+
+    return false;
+  }
+
+  //event.preventDefault();
+  //alert("Password and Confirm password doesn't match.");
+
+  return false;
+}
+
+
+</script>
+
+</head>
+<body>
+  <div id="loginModal" class="modal login-modal fade" role="dialog">
+      <div class="modal-dialog modal-lg">
+          <!-- Modal content-->
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal"><img src="bundles/design/site_data/images/modal-close.png" alt=""></button>
+              </div>
+              <div class="modal-body">
+                  <div class="row" id="to_hide1">
+                      <div class="col-xs-12 col-sm-6 left-block">
+                          <h3>Sign In</h3>
+                          <form>
+                              <div class="form-group">
+                                   <div id="errormsg"></div>
+                                  <label for="email">Email</label>
+                                  <input type="email" placeholder="Email" name="emailid" class="form-control" id="emailid">
+                              </div>
+                              <div class="form-group">
+                                  <label for="pwd">Password</label>
+                                  <input type="password" placeholder="Password" name="pwd" class="form-control" id="pwd">
+                              </div>
+                              <a href="#" class="theme-color" data-toggle="modal" data-target="#forgotpassModal" data-dismiss="modal">FORGOT PASSWORD</a>
+
+                               <a href="javascript:void(0);" onclick="login();" class="btn signin-act-btn">Sign In</a>
+                               <div class="clearfix"></div>
+							                                  
+                          </form>
+
+                      </div>
+                      <div class="col-xs-12 col-sm-6">
+                          <h3> New to the Cake Shop?</h3>
+                          <a href="#" onClick="show_hide1()" class="btn create-act-btn">Create an account</a>
+                      </div>
+                  </div>
+                  <div class="row" id="to_hide2" style="display:none;">
+                    <form  onsubmit=" validate1();" method="POST" name="create_new" id="create_new">
+                      <div class="col-xs-12 col-sm-12 left-block">
+
+                          <h3>Create an account</h3>
+                           <div id="errormsg2"></div>
+                           <div class="col-sm-6">
+                              <div class="form-group">
+
+                                  <label for="first_name">First name*</label>
+                                  <input type="text" placeholder="First name" name="first_name" class="form-control" id="first_name" required="">
+                              </div>
+                              <div class="form-group">
+                                  <label for="last_name">Last name*</label>
+                                  <input type="text" placeholder="Last name" name="last_name" class="form-control" id="last_name" required="">
+                              </div>
+                              <div class="form-group">
+                                  <label for="email">Email*</label>
+                                  <input type="email" placeholder="Email" name="email" class="form-control" id="email1" required="">
+                              </div>
+                          </div>
+                          <div class="col-sm-6">
+                              
+                                                              <div class="clearfix"></div>
+                               
+
+
+                      </div>
+                      <div class="col-xs-12 col-sm-6">
+                            <div class="form-group">
+                                <label for="mobile_no">Mobile no*</label>
+                                <input type="text" placeholder="Mobile no" name="mobile_no" class="form-control" id="mobile_no" required="" onkeypress='return event.charCode >= 48 && event.charCode <= 57 || event.keyCode==8'>
+                            </div>
+                            <div class="form-group">
+                                <label for="password1">Password*</label>
+                                <input type="password" placeholder="Password" name="password1" class="form-control" id="password1" required="">
+                            </div>
+                            <div class="form-group">
+                                <label for="password2">Confirm password*</label>
+                                <input type="password" placeholder="Confirm password" name="password2" class="form-control" id="password2" required="">
+                            </div>
+                        </div>
+                            <div class="col-xs-6">
+                                                            <a href="javascript:void(0);" onclick=" validate1();" name="create_user" id="create_user"  class="form-control btn signin-act-btn" >Create</a>
+                            </div>
+                            <div class="col-xs-6">
+
+                            <input type="button" class="form-control btn signin-act-btn" id="btn_back2" onClick="btn_back3()" value="Back" text="Back"/>
+
+                            </div>
+                          </div>
+                      </form>
+                      <script>
+                      function btn_back3()
+                      {
+                        $('#to_hide2').hide();
+                        $('#to_hide1').show();
+                      }
+                      </script>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- Login Modal -->
+
+   <style>
+
+	.vih{
+display: none;
+	}
+	  .square {
+	width: 191px;
+	height:72px;
+	margin: -15px;
+	-ms-transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-25deg);
+	overflow: hidden;
+	margin-bottom: -57px;
+	}
+.cake-top-img-real
+	{
+	top:28px ;
+	width:147px ;
+	left:48px ;
+	}
+#terms	
+	{
+	display: none;
+	padding:10px;
+	width:100%;
+	}
+	.fancybox-wrap
+	{
+	width:70% !important;
+	left:13% !important;
+	top:10% !important;
+	}
+	.fancybox-lock .fancybox-overlay
+	{
+	overflow:hidden !important;
+	}
+	.fancybox-inner
+	{
+	width:100% !important;
+	}
+	#termlink
+	{
+	color:#24cbbb;
+	}
+</style> 
+<style>
+	.dzn-cake .right-part .middel-bag img {
+	width: 270px;
+	}
+	.middel-bag
+	{
+	position: relative !important;
+	}
+	.layer_right_div,.cake-toping-img-real_div,.cake-top-img-real_div
+	{
+	position: absolute !important;
+	}
+	.color
+	{
+	border-radius: 50%;
+	width:30px;
+	height:30px;
+	}
+	.color_selected
+	{
+	text-align: center;
+	font-size: 22px;
+	color: white;
+	}
+	.select-color .color.color_selected:before
+	{
+	content:"\f00c";
+	font-family: FontAwesome;
+	}
+	.printimage img
+	{
+	height: 109px !important;
+	width: 167px !important;
+	}
+	.centertxt img
+	{
+	width: 270px;
+	} 
+	/*For hexa*/
+	.hexagon {
+	clip-path: polygon(30% 23%, 72% 23%, 100% 55%, 70% 100%, 31% 100%, 0 56%);
+	}
+	.design-your-cake .wizard .nav-tabs>li{
+		width:25%;
+	}
+</style> 
+<script src="../code.createjs.com/easeljs-0.8.2.min.js"></script>
+<div class="container main design-your-cake" style="background-color: #fff ;">
+	
+	<div class="textdata">
+		<h2>Design Cake</h2>
+		<p>Design your perfect Cake using this easy step-by-step process.</p>
+	</div>
+	<div class="container steps">
+				<div class="row">
+			<section>
+				<div class="wizard">
+					<div class="wizard-inner">
+						<div class="connecting-line"></div>
+						<ul class="nav nav-tabs" role="tablist">
+							<li role="presentation" class="active">
+								<a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
+								<span class="round-tab" onclick="tab_click(this);">
+								1
+								</span>
+								</a>
+							</li>
+							<li role="presentation" class="disabled">
+								<a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
+								<span class="round-tab" onclick="tab_click(this);">
+								2
+								</span>
+								</a>
+							</li>
+							<li role="presentation" class="disabled">
+								<a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
+								<span class="round-tab" onclick="tab_click(this);">
+								3
+								</span>
+								</a>
+							</li>
+							<li role="presentation" class="disabled">
+								<a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
+								<span class="round-tab" id="complete1" onclick="tab_click(this);">
+								4
+								</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+</div>
+<div class="container-fluid dzn-cake"  style="background-color: #fff ;">
+	<div class="container">
+		<form role="form">
+			<div class="tab-content">
+				
+				<input type="hidden" id="first_step_amt">
+				<input type="hidden" id="second_step_amt">
+				
+				<div class="tab-pane ck-tab1 active " role="tabpanel" id="step1">
+					<div class="col-xs-12 col-sm-8 left-part">
+						<h3>Choose your cake Shape & Layers</h3>
+						<h4>Choose Cake Shape</h4>
+						<div class="row cate-block">
+					<div class="col-xs-6 col-sm-3 shape" id="shape1" onclick="getlayers(1,'Round Shape Cake');">
+								<img src="bundles/design/shapeimage/1517673754_ck_13.png" alt="" >
+								<h6>Round Shape Cake</h6>
+							</div>
+						<div class="col-xs-6 col-sm-3 shape" id="shape3" onclick="getlayers(3,'Rectangular Cake');">
+								<img src="bundles/design/shapeimage/1517673707_ck_9.png" alt="" >
+								<h6>Rectangular Cake</h6>
+							</div>
+																				</div>
+						<h4>Choose Number of Layers</h4>
+					
+							<div class="row cate-block cake-preview-block vih"  id="layers1">
+								<div class="col-xs-6 col-sm-3 layer active" onclick="selectlayer(5,'https://www.thecakeshop.com.kw/bundles/design/layerimage/1517234358_1_14.png',1)" id="la5">
+                                <img class="img-custom-pre" data-src="https://www.thecakeshop.com.kw/bundles/design/layerimage/1517234358_1_14.png" src="https://www.thecakeshop.com.kw/bundles/design/layerimage/1517234358_1_14.png" alt="">
+                                <input type="hidden" value="1500.000" id="la_price_5" data-id="5" data-no="1">
+                                <h6>4 inch for 2 person</h6>
+                            </div>
+							<div class="col-xs-6 col-sm-3 layer" onclick="selectlayer(14,'https://www.thecakeshop.com.kw/bundles/design/layerimage/1517234481_1_9.png',2)" id="la14">
+                                <img class="img-custom-pre" data-src="https://www.thecakeshop.com.kw/bundles/design/layerimage/1517234481_1_9.png" src="https://www.thecakeshop.com.kw/bundles/design/layerimage/1517234481_1_9.png" alt="">
+                                <input type="hidden" value="2500.000" id="la_price_14" data-id="14" data-no="2">
+                                <h6>6 Inch Round (1st Tier) 
+									4 InchRound (2nd Tier)
+									For 11 Person</h6>
+                            </div><div class="col-xs-6 col-sm-3 layer" onclick="selectlayer(16,'https://www.thecakeshop.com.kw/bundles/design/layerimage/1517234736_1_12.png',3)" id="la16">
+                                <img class="img-custom-pre" data-src="https://www.thecakeshop.com.kw/bundles/design/layerimage/1517234736_1_12.png" src="https://www.thecakeshop.com.kw/bundles/design/layerimage/1517234736_1_12.png" alt="">
+                                <input type="hidden" value="3500.000" id="la_price_16" data-id="16" data-no="3">
+                                <h6>9 Inch Round( 1st Tier)
+								6 Inch Round( 2nd Tier)
+								4 Inch Round( 3rd Tier)
+								For 21 Person</h6>
+                            </div>
+						</div>
+
+
+						
+					<div class="row cate-block cake-preview-block vih"  id="layers2">
+							<div class="col-xs-6 col-sm-3 layer active" onclick="selectlayer(18,'https://www.thecakeshop.com.kw/bundles/design/layerimage/1517672096_3_18.png',1)" id="la18">
+							<img class="img-custom-pre" data-src="https://www.thecakeshop.com.kw/bundles/design/layerimage/1517672096_3_18.png" src="https://www.thecakeshop.com.kw/bundles/design/layerimage/1517672096_3_18.png" alt="">
+							<input type="hidden" value="1500.000" id="la_price_18" data-id="18" data-no="1">
+							<h6>21 x 29.7 cm for 20 person</h6>
+						</div><div class="col-xs-6 col-sm-3 layer" onclick="selectlayer(19,'https://www.thecakeshop.com.kw/bundles/design/layerimage/1517672142_3_19.png',2)" id="la19">
+							<img class="img-custom-pre" data-src="https://www.thecakeshop.com.kw/bundles/design/layerimage/1517672142_3_19.png" src="https://www.thecakeshop.com.kw/bundles/design/layerimage/1517672142_3_19.png" alt="">
+							<input type="hidden" value="2500.000" id="la_price_19" data-id="19" data-no="2">
+							<h6>30 x 40 cm( 1 st Tier )
+						21 x 29.7 cm( 2 nd Tier) for 55 Person </h6>
+						</div><div class="col-xs-6 col-sm-3 layer" onclick="selectlayer(20,'https://www.thecakeshop.com.kw/bundles/design/layerimage/1517672190_3_20.png',3)" id="la20">
+							<img class="img-custom-pre" data-src="https://www.thecakeshop.com.kw/bundles/design/layerimage/1517672190_3_20.png" src="https://www.thecakeshop.com.kw/bundles/design/layerimage/1517672190_3_20.png" alt="">
+							<input type="hidden" value="3500.000" id="la_price_20" data-id="20" data-no="3">
+							<h6>40 x 60 Cm( 1st Tier) 30 x 40 Cm( 2nd Tier) 21 x 29.7 Cm( 3rd Tier) For 105 person</h6>
+						</div></div> 
+
+						<ul class="list-inline pull-right">
+							<li>
+								<button type="button" class="btn btn-primary next-step first" style="background-color: #da627d;"  >Next <i class="fa fa-angle-right"></i></button>
+							</li>
+						</ul>
+					</div>
+					<div class="col-xs-12 col-sm-4 right-part first-part">
+						<ul>
+							<!-- <li>Collection Date & Time: <b class="datetime datecss"></b></li> -->
+							<li>Categories of Cake: <b class="cake_name">Customized Cake</b></li>
+							<!--<li>Number of Peoples required: <b class="no_of_people datecss">6</b></li>-->
+						</ul>
+						<div class="middel-bag my-cak">
+							<div class="layer_right_div">
+								<img src="./images/customDesign/1_14_2.png" class="img-responsive layer_right" alt=""></div>
+							<div class="cake-top-img-real_div">
+								<img src="#" alt=""  />
+								<img src="#" class="cake-top-img-real" style="display:none">
+							</div>
+							<div class="cake-toping-img-real_div"><img src="#" class="cake-toping-img-real" style="display:none"></div>
+						</div>
+						<div class="footer-bag">
+							<div class="row">
+								<div class="col-xs-6">Total Amount</div>
+								<div class="col-xs-6"><b id="first_part_amt" class="amt">00.000 PKR</b></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tab-pane ck-tab2 " role="tabpanel" id="step2">
+					<div class="col-xs-12 col-sm-8 left-part">
+						<h3>Choose Sponge Flavor & Icing</h3>
+												<h4>Choose Sponge Flavor</h4>
+	 <div class="row cate-block ck-tab-3-sld-1 pos-relative">
+	<div class="swiper-container">
+	 <div class="swiper-wrapper">	
+	<div class="swiper-slide flavor validate-sponge" id="flavor2"  style="margin-left: 50px ;" onclick="select_falvor(2, 'Chocolate Sponge Cake')">
+		<a href="javascript:void(0);">
+		<img src="bundles/design/spongeflavorimage/1508932827_3-2.png" alt=""><span>Chocolate Sponge Cake</span></a>
+	<input type='hidden' value="0.000" id="fa_price_2">
+	</div>
+	<div class="swiper-slide flavor validate-sponge" id="flavor3"  onclick="select_falvor(3, 'Vanilla  Sponge cake')">
+		<a href="javascript:void(0);">
+		<img src="bundles/design/spongeflavorimage/1525353265_vanilla.png" alt=""><span>Vanilla  Sponge cake</span></a>
+	<input type='hidden' value="0.000" id="fa_price_3">
+	</div>
+	<div class="swiper-slide flavor validate-sponge" id="flavor4"  onclick="select_falvor(4, 'Red Velvet Sponge cake')">
+		<a href="javascript:void(0);">
+		<img src="bundles/design/spongeflavorimage/1512551030_3-3.png" alt=""><span>Red Velvet Sponge cake</span></a>
+	<input type='hidden' value="0.000" id="fa_price_4">
+	</div>
+																																			</div>
+							</div>
+				
+						</div>
+						<h4>Choose Icing </h4>
+						<div class="row cate-block ck-tab-3-sld-2 pos-relative">
+							<div class="swiper-container">
+								<div class="swiper-wrapper">
+
+								<div class="swiper-slide topfilling" style="margin-left: 50px;" onclick="select_topfilling(1, 'Cream cheese frosting   green')" id="topfilling1"><a href="javascript:void(0);"><img src="bundles/design/fillingtopdecor/1526374212_T1.jpg" alt=""><span>Cream cheese frosting   green</span></a>
+										<input type='hidden' value="0.000" id="fi_price_1">
+									</div>
+
+																		<div class="swiper-slide topfilling" onclick="select_topfilling(3, 'Cream cheese frosting bright green')" id="topfilling3"><a href="javascript:void(0);"><img src="bundles/design/fillingtopdecor/1526374585_T7.jpg" alt=""><span>Cream cheese frosting bright green</span></a>
+										<input type='hidden' value="0.000" id="fi_price_3">
+									</div>
+																		<div class="swiper-slide topfilling" onclick="select_topfilling(4, 'Cream cheese frosting Royal Blue')" id="topfilling4"><a href="javascript:void(0);"><img src="bundles/design/fillingtopdecor/1526374785_T3.jpg" alt=""><span>Cream cheese frosting Royal Blue</span></a>
+										<input type='hidden' value="0.000" id="fi_price_4">
+									</div>
+
+																		<div class="swiper-slide topfilling" onclick="select_topfilling(6, 'Cream cheese frosting  pink')" id="topfilling6"><a href="javascript:void(0);"><img src="bundles/design/fillingtopdecor/1526375573_T9.jpg" alt=""><span>Cream cheese frosting  pink</span></a>
+										<input type='hidden' value="0.000" id="fi_price_6">
+									</div>
+																		<div class="swiper-slide topfilling" onclick="select_topfilling(7, 'Cream cheese frosting Torquoise Blue')" id="topfilling7"><a href="javascript:void(0);"><img src="bundles/design/fillingtopdecor/1591944203_18.jpg" alt=""><span>Cream cheese frosting Torquoise Blue</span></a>
+										<input type='hidden' value="0.000" id="fi_price_7">
+									</div>
+									
+																																			</div>
+							</div>
+						
+						</div>
+												<h4>Choose Print Image</h4>
+						<div class="row cate-block ck-tab-3-sld-3 pos-relative cake-top-img">
+							<div class="swiper-container" style="margin-left: 10px;">
+								<div class="swiper-wrapper appendimage">
+									<div class="swiper-slide" id="printimage0">
+										<a href="javascript:void(0);" id="a_printimage0" onclick="unsetImage_top_image('No Image');"><img src="bundles/design/site_data/images/create/default-no-image_small.png" alt="" style="max-height: 115px;"><span>No Image</span></a>
+									</div>
+
+									<div id="div_appendimage"></div>
+									<div class="swiper-slide  printimage" onclick="select_printimage(4, 'Minion',333.000,'bundles/design/imagetopdecorationimage/1512552617_3-18.png')" id="printimage4"><a href="javascript:void(0);" class="cake-top-img-pre"><img src="bundles/design/imagetopdecorationimage/1512552617_3-18.png" alt=""><span>Minion</span></a>
+										<input type='hidden' value="333.000" id="td_price_4">
+									</div>
+																		<div class="swiper-slide  printimage" onclick="select_printimage(5, 'Spider Man',333.000,'bundles/design/imagetopdecorationimage/1512552648_3-17.png')" id="printimage5"><a href="javascript:void(0);" class="cake-top-img-pre"><img src="bundles/design/imagetopdecorationimage/1512552648_3-17.png" alt=""><span>Spider Man</span></a>
+										<input type='hidden' value="333.000" id="td_price_5">
+									</div>
+																		<div class="swiper-slide  printimage" onclick="select_printimage(8, 'Princesses Disney',333.000,'bundles/design/imagetopdecorationimage/1512552712_3-16.png')" id="printimage8"><a href="javascript:void(0);" class="cake-top-img-pre"><img src="bundles/design/imagetopdecorationimage/1512552712_3-16.png" alt=""><span>Princesses Disney</span></a>
+										<input type='hidden' value="333.000" id="td_price_8">
+									</div>
+																																			</div>
+							</div>
+					
+						</div>
+						<ul class="list-inline pull-right">
+							<li>
+								<button type="button" class="btn btn-primary next-step second" onclick="tot_amount();" style="background-color:#da627d">Next <i class="fa fa-angle-right"></i></button>
+							</li>
+						</ul>
+					</div>
+					<div class="col-xs-12 col-sm-4 right-part second-part">
+						<ul>
+							<!-- <li>Collection Date & Time: <b class="datetime datecss"></b></li> -->
+							<li>Categories of Cake: <b class="cake_name">Customized Cake</b></li>
+							<!-- <li>Number of Peoples required: <b class="no_of_people datecss">6</b></li> -->
+							<li>Sponge Flavor: <b class="flavor_name"></b></li>
+							<li>Icing: <b class="topfilling_name"></b></li>
+							<li>Top Decoration: <b class="printimage_name"> </b></li>
+							<li>delivery Charges: <b > 200 </b></li>
+						</ul>
+						<div class="middel-bag">
+							<div class="layer_right_div" >
+								<img class="layer_right" id="rightdiv" src="" alt=""></div>
+							<div class="cake-top-img-real_div"><img class="cake-top-img-real" src="#" alt="" style="display:none" /></div>
+							<div class="cake-toping-img-real_div"><img src="#" class="cake-toping-img-real" style="display:none"></div>
+						
+						</div>
+						<div class="footer-bag">
+							<div class="row">
+								<div class="col-xs-6">Total Amount</div>
+								<div class="col-xs-6"><b id="second_part_amt" class="amt">00.000 PKR</b></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tab-pane ck-tab3" role="tabpanel" id="step3">
+					<div class="col-xs-12 col-sm-8 left-part">
+						<h3>Message on Cake & Finishing Touches</h3>
+						<h4>Message on cake (Max 35 Chars) </h4>
+						<textarea name="msg_on_cake" onkeyup="getmessage(this);" class="message"  rows="5" id="msg_on_cake"></textarea>
+						<h4>Select Message Color</h4>
+						<div class="select-color">
+							<div class="row">
+																								<div class="col-xs-6 col-sm-3">
+									<div class="media">
+										<div class="media-left">
+											<div class="color" id="color1" style="background-color:#5E084B" onClick="change_colordiv_state(this,1,'Purple','5E084B')">
+											</div>
+										</div>
+										<div class="media-body">
+											<p>Purple</p>
+										</div>
+									</div>
+								</div>
+																<div class="col-xs-6 col-sm-3">
+									<div class="media">
+										<div class="media-left">
+											<div class="color" id="color4" style="background-color:#000000" onClick="change_colordiv_state(this,4,'Solid-Black','000000')">
+											</div>
+										</div>
+										<div class="media-body">
+											<p>Solid-Black</p>
+										</div>
+									</div>
+								</div>
+																<div class="col-xs-6 col-sm-3">
+									<div class="media">
+										<div class="media-left">
+											<div class="color" id="color7" style="background-color:#D61C09" onClick="change_colordiv_state(this,7,'Red','D61C09')">
+											</div>
+										</div>
+										<div class="media-body">
+											<p>Red</p>
+										</div>
+									</div>
+								</div>
+																<div class="col-xs-6 col-sm-3">
+									<div class="media">
+										<div class="media-left">
+											<div class="color" id="color9" style="background-color:#ffc0cb" onClick="change_colordiv_state(this,9,'Pink','ffc0cb')">
+											</div>
+										</div>
+										<div class="media-body">
+											<p>Pink</p>
+										</div>
+									</div>
+								</div>
+																<div class="col-xs-6 col-sm-3">
+									<div class="media">
+										<div class="media-left">
+											<div class="color" id="color10" style="background-color:#0000ff" onClick="change_colordiv_state(this,10,'Blue','0000ff')">
+											</div>
+										</div>
+										<div class="media-body">
+											<p>Blue</p>
+										</div>
+									</div>
+								</div>
+																<div class="col-xs-6 col-sm-3">
+									<div class="media">
+										<div class="media-left">
+											<div class="color" id="color11" style="background-color:#99ff99" onClick="change_colordiv_state(this,11,'Green','99ff99')">
+											</div>
+										</div>
+										<div class="media-body">
+											<p>Green</p>
+										</div>
+									</div>
+								</div>
+																<div class="col-xs-6 col-sm-3">
+									<div class="media">
+										<div class="media-left">
+											<div class="color" id="color12" style="background-color:#FFFFFF" onClick="change_colordiv_state(this,12,'Off White','FFFFFF')">
+											</div>
+										</div>
+										<div class="media-body">
+											<p>Off White</p>
+										</div>
+									</div>
+								</div>
+																								<input type="checkbox" class="hide" name="colorcheck" id="colorcheck" value="0" >
+							</div>
+						</div>
+						<h4>Special Notes:</h4>
+						<textarea name="spec_note" class="message"  rows="5" id="spec_note" onkeyup="getnote(this);"></textarea>
+						<ul class="list-inline pull-right">
+							<li>
+								<button type="button" class="btn btn-primary next-step third" onclick="tot_amount();"style="background-color:#da627d">Next <i class="fa fa-angle-right"></i></button>
+							</li>
+						</ul>
+					</div>
+					<div class="col-xs-12 col-sm-4 right-part">
+						<ul>
+							<!-- <li>Collection Date & Time: <b class="datetime datecss"></b></li> -->
+							<li>Categories of Cake: <b class="cake_name">Customized Cake</b></li>
+							<!-- <li>Number of Peoples required: <b class="no_of_people datecss">6</b></li> -->
+							<li>Sponge Flavor: <b class="flavor_name">Vanilla </b></li>
+							<li>Icing: <b class="topfilling_name">Chocolate Vanilla Cream</b></li>
+							<li>Top Decoration: <b class="printimage_name"> </b></li>
+							<li>Delivaary Charges: <b> 200 </b></li>
+							<!--        <li>Sprinkles: <b class="sidedecoration_name">Colored Sprinkles </b></li>
+								-->
+							<li>Message: <b class="message_display"> </b></li>
+							<li>Special Notes: <b class="spec_note_display"> </b></li>
+							<li>Message Color: <b class="color_name_text"> </b></li>
+						</ul>
+						
+						<div class="middel-bag">
+							<div class="layer_right_div" >
+								<img class="layer_right" id="rightdiv" src="" alt=""></div>
+							<div class="cake-top-img-real_div"><img class="cake-top-img-real" src="#" alt="" style="display:none" /></div>
+							<div class="cake-toping-img-real_div"><img src="#" class="cake-toping-img-real" style="display:none"></div>
+						
+						</div>
+
+						<div class="footer-bag">
+							<div class="row">
+								<div class="col-xs-6">Total Amount</div>
+								<div class="col-xs-6"><b class="amt">00.000 PKR</b></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tab-pane " role="tabpanel" id="complete">
+										<h3 class="text-success text-center" style="color: #b30059"> Thank you, Your Custom Cake Creation Completed Successfully.</h3>
+					<div class="col-xs-12 col-sm-6 col-sm-offset-3 centertxt">
+												<img src="#" alt="" class="final_product" style="display:none" >
+						<div class="middel-bag" style="margin-left: auto;
+							margin-right: auto;
+							height: 270px;
+							width: 270px;
+							display: block;
+							/* padding: 0px 30px; */
+							position: relative !important;
+							perspective-origin: 150% 150%;
+							transform-style: preserve-3d;">
+							<div class="layer_right_div"><img class="layer_right" src="bundles/design/site_data/images/create/cake-pre02.png" alt=""></div>
+							<div class="cake-top-img-real_div"><img class="cake-top-img-real" style="position: absolute;" src="#" alt="" style="display:none" /></div>
+							<div class="cake-toping-img-real_div"><img src="#" class="cake-toping-img-real" style="display:none"></div>
+						</div>
+						<div class="table-responsive">
+							<table>
+								<!-- <tr>
+									<td class="text-right">Collection Date & Time:</td>
+									<td class="text-left"><b class="datetime datecss"></b></td>
+									<input type="hidden" id="datetime_hidden">
+								</tr> -->
+								<tr>
+									<td class="text-right">Categories of Cake: </td>
+									<td class="text-left"><b class="cake_name" >Customized Cake</b></td>
+								</tr>
+								<!-- <tr>
+									<td class="text-right">Number of Peoples required:</td>
+									<td class="text-left"><b class="no_of_people datecss">6</b></td>
+								</tr> -->
+								<tr>
+									<td class="text-right">Sponge Flavor:</td>
+									<td class="text-left"><b class="flavor_name">Vanilla</b></td>
+								</tr>
+								<tr>
+									<td class="text-right">Icing:</td>
+									<td class="text-left"><b class="topfilling_name">Chocolate Vanilla Cream</b></td>
+								</tr>
+								<tr>
+									<td class="text-right">Top Decoration:</td>
+									<td class="text-left"><b class="printimage_name"></b></td>
+								</tr>
+						
+								<!--                                <tr>
+									<td class="text-right">Sprinkles:</td>
+									<td class="text-left"><b class="sidedecoration_name">Colored Sprinkles</b></td>
+									</tr> -->
+								<tr>
+									<td class="text-right">Message:</td>
+									<td class="text-left"><b class="message_display"> </b></td>
+								</tr>
+								<tr>
+									<td class="text-right">Special Notes:</td>
+									<td class="text-left"><b class="spec_note_display"> </b></td>
+								</tr>
+								<tr>
+									<td class="text-right">Message Color:</td>
+									<td class="text-left"><b class="color_name_text"> </b></td>
+								</tr>
+								<tr>
+									<td class="text-right">Delivary Charges</td>
+									<td class="text-left"><b> 200 PKR (Included) </b></td>
+								</tr>
+							</table>
+						</div>
+						<input type="hidden" nmae="collection_date" id="collection_date" value="" />
+						<input type="hidden" nmae="collection_time" id="collection_time" value="" />
+						<input type="hidden" nmae="categories_of_cake" id="categories_of_cake" value="" />
+						<input type="hidden" nmae="number_of_people" id="number_of_people" value="" />
+						<input type="hidden" nmae="cake_shape" id="cake_shape" value="" />
+						<input type="hidden" nmae="no_of_layers" id="no_of_layers" value="" />
+						<input type="hidden" nmae="sponge_flavor" id="sponge_flavor" value="" />
+						<input type="hidden" nmae="top_filling_decoration" id="top_filling_decoration" value="" />
+						<input type="hidden" nmae="print_image" id="print_image" value="" />
+						<input type="hidden" nmae="side_decoration" id="side_decoration" value="" />
+						<input type="hidden" nmae="msg_co_cake" id="msg_co_cake" value="" />
+						<input type="hidden" nmae="msg_color" id="msg_color" value="" />
+						<input type="hidden" nmae="val1" id="val1" value="" />
+						<input type="hidden" nmae="val2" id="val2" value="" />
+
+						<h2>Total Amount <b class="amt">1036.000 PKR</b></h2>
+						<div class="step-action">
+		
+							<a href="localhost:3000" class="addcart-pink hvr-push" id="add_to_cart"style="background-color:#da627d" >  Checkout</a>
+							<br>
+							<br>
+							<br>
+						</div>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</form>
+	</div>
+</div>
+<div id="terms" >
+	<h2> Terms and Condition</h2>
+	 </div>
+<!-- top image upload Modal -->
+<div id="topimageuploadModal" class="modal login-modal fade" role="dialog">
+	<div class="modal-dialog modal-lg">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><img src="bundles/design/site_data/images/modal-close.png" alt=""></button>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 left-block">
+						<h3>Upload Your Image</h3>
+						<form id="uploadimageform">
+							<div class="form-group">
+								<div class="uploadimagemsg"></div>
+								<label for="image">Image</label>
+								<input type="file" name="topimageupload" id="topimageupload" class="form-control" onchange="readimage(this);">
+								<img src="#" id="uploadedimage" class="hide">
+							</div>
+							<div class="form-group">
+																<input type="hidden" name="image_name"  id="image_name" class="form-control">
+							</div>
+							<a href="javascript:void(0);" onclick="add_topimage();" class="btn signin-act-btn"  style="color:white;">SUBMIT</a>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<input type="hidden" id="updated_date_hidden">
+<input type="hidden" id="updated_sparedate_hidden">
+<input type="hidden" id="updated_time_hidden">
+
+<!-- top image upload Modal -->
+
+<footer>
+
+   
+</footer>
+
+<!-- forgot password Modal -->
+   <div id="forgotpassModal" class="modal login-modal fade" role="dialog">
+       <div class="modal-dialog modal-lg">
+           <!-- Modal content-->
+           <div class="modal-content">
+               <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal"><img src="bundles/design/site_data/images/modal-close.png" alt=""></button>
+               </div>
+               <div class="modal-body">
+                   <div class="row">
+                       <div class="col-xs-12 col-sm-6 left-block">
+                           <h3>Reset Your Password</h3>
+                           <div id="errormsg2"></div>
+                          <form  onsubmit=" forgot();" method="POST" name="forgotpass" id="forgotpass">
+                               <div class="form-group">
+                                   <label for="email">Email</label>
+                                   <input type="email" id="forgotemail" name="email" placeholder="Email" class="form-control" id="email4">
+                               </div>
+                               <div class="form-group">
+                                <p>We'll email you a link to make a new password. RIP old password. You had a good run.</p>
+                               </div>
+
+
+                                <a href="javascript:void(0);" class="btn signin-act-btn" onclick=" forgot();" name="forgotpass" id="forgotpass">SUBMIT</a>
+                                <div class="clearfix"></div>
+
+                          </form>
+
+                       </div>
+                       <div class="col-xs-12 col-sm-6">
+                           <h3>New to the Cake Shop?</h3>
+                           <a href="#" class="btn create-act-btn">Create an account</a>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+ <div class="modal fade" id="myModal" role="dialog" style="display:none;margin-top:37px;direction: ltr;">
+       <div class="modal-dialog">
+
+         <!-- Modal content-->
+         <div class="modal-content" style="background-color:#FFB6C1">
+           <div class="">
+                          <h4 class="modal-title"></h4>
+           </div>
+           <div class="modal-body">
+              <h3 style="margin:2px;text-align:center;color:#fff;font-family:'Croissant One', cursive;"class="msg design"></h3></center>
+           </div>
+           <div class="">
+                        </div>
+         </div>
+
+       </div>
+     </div>
+   
+<script>
+
+	function forgot()
+     {
+       
+                                                            if($("#forgotemail").val()=='')
+      {
+           alert('Please fill your email address.');
+         $("#errormsg2").html('<div class="alert alert-danger"> <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><div style="direction:ltr;"><strong>Error!</strong>&nbsp;&nbsp;&nbsp;Please fill up all required fields.</div></div>');
+        return false;
+      }
+      else{
+           $.ajax
+           ({
+               type: 'POST',
+               url : "/forgotpassword",
+               data: 'email='+$("#forgotemail").val(),
+               success:function(msg){
+               // alert(msg);
+                   if(msg=='success')
+                   {
+                       alert(msg);
+                        location.reload();
+                   }else{
+                       alert(msg);
+                        $("#errormsg2").html("<div class='alert alert-danger'> <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><div style='direction:ltr;'><strong>Error!</strong>&nbsp;&nbsp;&nbsp;"+msg+"</div></div>");
+
+                       return false;
+                   }
+                return false;
+               }
+           });
+       }
+
+       //event.preventDefault();
+       //alert("Password and Confirm password doesn't match.");
+
+       return false;
+     }
+
+
+  $(document).ready(function() {
+        // document is loaded and DOM is ready
+        //main slider
+        var swiper1 = new Swiper('.header-slider .swiper-container', {
+            paginationClickable: true,
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: 5000,
+            autoplayDisableOnInteraction: false
+        });
+
+        //cakes slider
+        var swiper2 = new Swiper('.fav-slider .cakes .swiper-container', {
+            nextButton: '.fav-slider .cakes .swiper-button-next',
+            prevButton: '.fav-slider .cakes .swiper-button-prev',
+            paginationClickable: true,
+            slidesPerView: 5,
+            spaceBetween: 50,
+            breakpoints: {
+                1024: {
+                    slidesPerView: 5,
+                    spaceBetween: 40
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 30
+                },
+                640: {
+                    slidesPerView: 1,
+                    spaceBetween: 20
+                }
+            }
+        });
+
+        $('.fav-slider a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
+
+            //flowers slider
+            var swiper3 = new Swiper('.fav-slider .flowers .swiper-container', {
+                nextButton: '.fav-slider .flowers .swiper-button-next',
+                prevButton: '.fav-slider .flowers .swiper-button-prev',
+                paginationClickable: true,
+                slidesPerView: 5,
+                spaceBetween: 50,
+                breakpoints: {
+                    1024: {
+                        slidesPerView: 5,
+                        spaceBetween: 40
+                    },
+                    768: {
+                        slidesPerView: 3,
+                        spaceBetween: 30
+                    },
+                    640: {
+                        slidesPerView: 1,
+                        spaceBetween: 40
+
+                    }
+                }
+            });
+
+
+            //gifts slider
+            var swiper4 = new Swiper('.fav-slider .gifts .swiper-container', {
+                nextButton: '.fav-slider .gifts .swiper-button-next',
+                prevButton: '.fav-slider .gifts .swiper-button-prev',
+                paginationClickable: true,
+                slidesPerView: 5,
+                spaceBetween: 50,
+                breakpoints: {
+                    1024: {
+                        slidesPerView: 5,
+                        spaceBetween: 40
+                    },
+                    768: {
+                        slidesPerView: 3,
+                        spaceBetween: 30
+                    },
+                    640: {
+                        slidesPerView: 1,
+                        spaceBetween: 40
+
+                    }
+                }
+            });
+        });
+
+
+        //most selling slider
+        var swiper5 = new Swiper('.most-selling .swiper-container', {
+            nextButton: '.most-selling .swiper-button-next',
+            prevButton: '.most-selling .swiper-button-prev',
+            paginationClickable: true,
+            slidesPerView: 5,
+            spaceBetween: 5,
+            breakpoints: {
+                1024: {
+                    slidesPerView: 5,
+                    spaceBetween: 40
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 30
+                },
+                640: {
+                    slidesPerView: 1,
+                    spaceBetween: 40
+
+                }
+            }
+        });
+
+
+        $("a.menu").on("click", function(e) {
+
+            // $('.menu-detail').toggleClass('open').slideToggle();
+
+            $('.menu-detail').slideToggle('slow', function() {
+                $('.menu-detail').toggleClass('open', $(this).is(':visible'));
+            });
+            e.preventDefault();
+        });
+        $('.chat-box').hide();
+        $(".chat-icon").on("click", function(e) {
+
+            $('.chat-box').toggle();
+            $('.chat-icon').toggleClass('open');
+            e.preventDefault();
+
+
+        });
+
+
+
+    });
+function login()
+{
+        $.ajax
+        ({
+            type: 'POST',
+            url : "/logincheck",
+            data: 'email='+$("#emailid").val()+'&password='+$("#pwd").val(),
+            success:function(msg){
+                if(msg=='success')
+                {
+                     $("#loginModal").modal('hide');
+                     $('#myModal').modal('show');
+                     $(".msg").html("Login Successfully");
+                     location.reload();
+                }else{
+                                                                                    $("#errormsg").html('<div class="alert alert-danger"> <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><div style="direction:ltr;"><strong>Error!</strong>&nbsp;&nbsp;&nbsp;'+msg+'</div></div>');
+
+                }
+
+            }
+        });
+}
+
+</script>
+<!-- Banner -->
+
+<script src="bundles/design/site_data/fancybox/jquery.fancybox.js"></script>
+<script>
+
+	function toDate(y, m, d, h, min) {
+		//var now = new Date();
+		var now = new Date(y,m,d,h,min);
+		if (format == "h:m") {
+			now.setHours(dStr.substr(0,dStr.indexOf(":")));
+			now.setMinutes(dStr.substr(dStr.indexOf(":")+1));
+			now.setSeconds(0);
+			return now;
+		}else 
+			return "Invalid Format";
+	}
+	
+	var page_load = 1;
+	$(document).ready(function() {
+		// default first selected on page load
+		
+		$('.fancybox').fancybox({"width":"70%"});
+	});
+	   var canvas_obj = $('.middel-bag');
+	   var canvas_img = $('.layer_right');
+	
+	       function getCookie(cname) {
+			var name = cname + "=";
+			var decodedCookie = decodeURIComponent(document.cookie);
+			var ca = decodedCookie.split(';');
+			for (var i = 0; i < ca.length; i++) {
+			var c = ca[i];
+			while (c.charAt(0) == ' ') {
+			c = c.substring(1);
+			}
+			if (c.indexOf(name) == 0) {
+			return c.substring(name.length, c.length);
+			}
+			}
+			return "";
+	       }
+	       var amt = 0;
+	    	var second_part_retain_price = 0;
+	       var quantity = 0;
+	       var tot = [];
+	       var ingradiance = []; // for store in db
+		   icing=1;
+	       var layer_number = 0;
+	       var month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+	       var jsonObj = [];
+	       var item = {};
+	       var item1 = {};
+	       var data = []; // for store in db
+	       var img_dim1 = []; // for top image
+	       $(document).ready(function() {
+	//order type store....................................
+		if($('#delivery_radio').is(':checked')){
+			data['order_type'] = 'delivery';
+		}
+		if($('#pickup_radio').is(':checked')){
+			data['order_type'] = 'pickup';
+		}
+	
+		$('#delivery_radio').click(function(){
+			if($(this).is(':checked')){
+				data['order_type'] = 'delivery';
+			}
+		});
+	
+		$('#pickup_radio').click(function(){
+			if($(this).is(':checked')){
+				data['order_type'] = 'pickup';
+			}
+		});
+	//order type store end....................................
+	
+	       document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
+	       
+	       	       //onload first cake selected amt display end
+	
+	       $(".date1").val(new Date().getDate() + " " + month[new Date().getMonth()] + " " + String().split(" ")[3]);
+	       item ['date'] = $(".date1").val();
+	       var postHour = new Date().getHours();
+	       var mid = "";
+	       //var forMinutes = " For 15 Minutes";
+	       if (postHour == 0 && postHour < 12)
+	       { //At 00 hours we need to show 12 am
+	       mid = "am";
+	       }
+	       else if (postHour >= 12)
+	       {
+	       mid = 'pm';
+	       }
+	       $(".time1").val(new Date().getHours() + ":" + new Date().getMinutes() + " " + mid);
+	       item ['time'] = $(".time1").val();
+	       if ($(".date1").val() == '' || $(".time1").val() == '')
+	       {
+	       $(".first").prop('disabled', true);
+	       } else{
+	       $(".first").prop('disabled', false);
+	       }
+	       	               getlayers(1,'Round Shape Cake');
+	                item ['shape_id'] = '1';
+	                item1 ['shape_name'] = 'Round Shape Cake';
+	                 dataStore = document.cookie = "create_cake_id=" + JSON.stringify(item);
+	                  dataStore1 = document.cookie = "create_cake_text=" + JSON.stringify(item1);
+	       		   
+		   
+		   // Start: first step
+			$(".first").click(function(){
+
+
+
+				item ['step'] = 1;
+				item ['no_of_people'] = $(".range-slider__range").val();
+				dataStore = document.cookie = "create_cake_id=" + JSON.stringify(item);
+				
+								
+				var amount = $('#first_step_amt').val();
+			
+				if(amount == null){
+					alert("select cake first");
+				}
+
+				$("#second_part_amt").html((Number(amount)).toFixed(3) + ' PKR');
+			});
+			// End: First step
+
+			// Start: Second Step
+			$(".second").click(function(){
+				item ['step'] = 2;
+				dataStore = document.cookie = "create_cake_id=" + JSON.stringify(item);
+				let secondImgDiv=$('.second-part > div:nth-child(2) > div:nth-child(1)')
+				$('#step3 > div:nth-child(2) > div:nth-child(2) > div:nth-child(1)').html(secondImgDiv.html())
+					console.log('.second.click');
+					if(ingradiance['spongeflavor_id'] == 0 || ingradiance['spongeflavor_id'] == null)
+					{
+			
+						select_falvor(2, 'Chocolate Sponge Cake', '0.000');
+						ingradiance['spongeflavor_id'] = '2';
+						item ['spongeflavor_id'] = ingradiance['spongeflavor_id'];
+					}
+					
+					
+					if(ingradiance['fillingtopdecoration_id'] == 0 || ingradiance['fillingtopdecoration_id'] == null)
+					{
+						select_topfilling(1, 'Cream cheese frosting   green', '0.000');
+						ingradiance['fillingtopdecoration_id'] = '1';
+						icing = 0;
+					
+						item ['fillingtopdecoration_id'] = ingradiance['fillingtopdecoration_id'];
+					}
+							
+								
+					if(ingradiance['imagetopdecoration_id'] == 0 || ingradiance['imagetopdecoration_id'] == null ||  ingradiance['imagetopdecoration_id'] == 'undefined' || typeof ingradiance['imagetopdecoration_id'] == "undefined")
+					{
+						$('#a_printimage0').click();
+					}
+					else{
+						//alert('no');
+					}
+							
+				var amt_old = $('#second_part_amt').text();
+				var amount_old = amt_old.substr(0, amt_old.indexOf(' P'));
+				second_part_retain_price = parseFloat(amount_old);
+			});
+			// End: Second Step
+			
+			$(".third").click(function(){
+				//
+				console.log('sec - ' + second_part_retain_price);
+				let secondImgSrc=$('#step3 > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > img:nth-child(1)').attr('src')
+				$('.col-sm-offset-3 > div:nth-child(2) > div:nth-child(1) > img:nth-child(1)').attr('src',secondImgSrc)
+	           item ['step'] = 3;
+
+			
+	           item ['spongeflavor_id'] = ingradiance['spongeflavor_id'];
+	           item ['fillingtopdecoration_id'] = ingradiance['fillingtopdecoration_id'];
+	           item ['imagetopdecoration_id'] = ingradiance['imagetopdecoration_id'];
+	           dataStore = document.cookie = "create_cake_id=" + JSON.stringify(item);
+	           // console.log(dataStore);
+	           	
+	           if(ingradiance['spongeflavor_id'] == 0 || ingradiance['spongeflavor_id'] == null)
+	           {
+	             select_falvor(2, 'Chocolate Sponge Cake', '0.000');
+	             ingradiance['spongeflavor_id'] = '2';
+	             item ['spongeflavor_id'] = ingradiance['spongeflavor_id'];
+				 icing = 0;
+	           }
+	
+	
+	           	           if(ingradiance['fillingtopdecoration_id'] == 0 || ingradiance['fillingtopdecoration_id'] == null)
+	           {
+	             	                 select_topfilling(1, 'Cream cheese frosting   green', '0.000');
+	                 ingradiance['fillingtopdecoration_id'] = '1';
+	             	             item ['fillingtopdecoration_id'] = ingradiance['fillingtopdecoration_id'];
+	           }
+	
+	           	           if(ingradiance['sidedecoration_id'] == 0 || ingradiance['sidedecoration_id'] == null)
+	           {
+			  //select_sidedecoration(5, 'Pink, Purple and Red sprinkles', '0.000');
+	             //ingradiance['sidedecoration_id'] = '5';
+	             ingradiance['sidedecoration_id'] = 0;
+	             item ['sidedecoration_id'] = ingradiance['sidedecoration_id'];
+	           }
+	
+	           			});
+			
+	       $(".fourth").click(function(){
+	           //update_create_cake_detail(4,$(".date1").val(),$(".time1").val(),ingradiance['cake_id'],$(".left").val());
+	           item ['step'] = 4;
+	        //    item ['sidedecoration_id'] = ingradiance['sidedecoration_id'];
+	           dataStore = document.cookie = "create_cake_id=" + JSON.stringify(item);
+	           console.log('forthh step',dataStore);
+	       });
+	       $(".fifth").click(function(){
+	           //update_create_cake_detail(5,$(".date1").val(),$(".time1").val(),ingradiance['cake_id'],$(".left").val());
+	           item ['step'] = 5;
+	           item ['message'] = $("#msg_on_cake").val();
+	           item ['color'] = '';
+	           item ['special_instruction'] = $("#spec_note").val();
+	           dataStore = document.cookie = "create_cake_id=" + JSON.stringify(item);
+	           // console.log(dataStore);
+	           // var img_path= 'https://www.thecakeshop.com.kw/'+'bundles/design/master_data/shape/layers/Sponge_Flavor/Icing/Sprinkles/' + item['shape_id'] + '_' + item['layer_id'] + '_0_' + item['fillingtopdecoration_id'] + '_' + item['sidedecoration_id'] + '.png';
+			//var img_path= 'https://www.thecakeshop.com.kw/'+'bundles/design/master_data/shape/layers/Sponge_Flavor/Icing/' + item['shape_id'] + '_' + item['layer_id'] + '_0_' + item['fillingtopdecoration_id'] + '.png';
+	           // console.log(img_path);
+	
+	         //  $(".final_product").attr('src',img_path);
+	         if(item['fillingtopdecoration_id']==1 || item['fillingtopdecoration_id']==2)
+	        {
+			src3 = 'bundles/design/master_data/shape/layers/Sponge_Flavor/Icing/index.html';
+	           src3 = src3 + item['shape_id']+'_'+ item['layer_id'] + '_Y_' + item['fillingtopdecoration_id'] +'.png';
+	
+	       }else{
+	           src3 = 'bundles/design/master_data/shape/layers/Sponge_Flavor/index.html';
+	           src3 = src3 + item['shape_id']+'_'+ item['layer_id'] + '_' + item['spongeflavor_id'] +'.png';
+			  
+	       }
+	                $('.final_product').attr('src',src3);
+				    //last_step_topimage();
+					  //$('.cake-top-img-real').show();
+	
+	
+			  $('.cake-top-img-real').css({"top":img_dim1['top'], "width":img_dim1['width'], "left":img_dim1['left'],"transform":img_dim1['transform'],"border-radius":img_dim1['border-radius'],"z-index":img_dim1['z-index'],"position":img_dim1['position']});
+	
+	       });
+	       $('.cake-preview-block .img-custom-pre').on('click', function(e){
+	           e.preventDefault();
+	           $(this).parent().addClass('active');
+	           $(this).parent().siblings().removeClass('active');
+	           var sldimg = $(this).attr('data-src');
+	           $('.my-cak img').attr('src', sldimg);
+	           $(this).closest('.img-responsive');
+	       });
+	           $('.cake-top-img .cake-top-img-pre').on('click', function(e){
+	               e.preventDefault();
+	               $(this).parent().addClass('active');
+	               $(this).parent().siblings().removeClass('active');
+	               var sldimg = $(this).find('img').attr('src');
+	              // $('.cake-top-img-real').attr('src', sldimg);
+	
+	               $(this).closest('.img-responsive');
+	           });
+	           // document is loaded and DOM is ready
+	           $(function() {
+	               $('.datepicker').datetimepicker({
+	                   format: 'DD/MM/YYYY'
+	               });
+	           });
+	           $(".datepicker").on("dp.change", function (e) {
+	               item ['date'] = $(".date1").val();
+	               var old = $(".datetime").html();
+	               //alert(old);
+	               var arr = old.split('at');
+	               //alert(arr.length);
+	               //alert(arr[0]);
+	               var txt = '';
+				   var temp_date = '';
+	               if (arr.length > 1)
+	               {
+						temp_date = new Date(e.date).getDate() + '-' + new Date(e.date).getMonth();
+						
+	                   txt = new Date(e.date).getDate() + " " + month[new Date(e.date).getMonth()] + " " + String(e.date).split(" ")[3] + " at " + arr[1];
+	               }
+	               else{
+					temp_date = new Date(e.date).getDate() + '-' + new Date(e.date).getMonth();
+	                   txt = new Date(e.date).getDate() + " " + month[new Date(e.date).getMonth()] + " " + String(e.date).split(" ")[3];
+	               }
+				   $('#datetime_hidden').val(temp_date);
+				   $(".datetime").html(txt);
+	               item1['date_time_text'] = txt;
+	               dataStore1 = document.cookie = "create_cake_text=" + JSON.stringify(item1);
+	           // console.log(dataStore1);
+	               if ($(".date1").val() == '' || $(".time1").val() == '')
+	               {
+	                   $(".first").prop('disabled', true);
+	               } else{
+	                   $(".first").prop('disabled', false);
+	               }
+	
+	           //$(".timepicker").;
+	           });
+	           $(function() {
+	               $('.timepicker').datetimepicker({
+	                    format: 'LT'
+	               });
+	           });
+	           $(".timepicker").on("dp.change", function (e) {
+	               item ['time'] = $(".time1").val();
+	               var old = $(".datetime").html();
+	               var arr = old.split('at');
+	               var txt = '';
+				   var sel_date = $('#date').val();
+				   var sel_time = $(".time1").val();
+				   
+					var from1 = sel_date.split("index.html");
+				    
+					if (arr.length > 1)
+	               {
+	                   txt = arr[0] + ' at ' + $(".time1").val();
+	                   $(".datetime").html(txt);
+	                   item1['date_time_text'] = txt;
+	                   dataStore1 = document.cookie = "create_cake_text=" + JSON.stringify(item1);
+	                   //console.log(dataStore1);
+	               }
+	               else{
+	                   txt = ' at ' + $(".time1").val();
+	                   $(".datetime").append(txt);
+	                   item1['date_time_text'] += txt;
+	                   dataStore1 = document.cookie = "create_cake_text=" + JSON.stringify(item1);
+	                   // console.log(dataStore1);
+	               }
+					
+					if(from1.length > 0){
+						var dec_time = sel_time.split(' ');
+						if(dec_time.length > 0){
+							var h = dec_time[0].substr(0,dec_time[0].indexOf(":"));
+							var min = dec_time[0].substr(dec_time[0].indexOf(":")+1);							
+							var new_date = new Date(from1[2],from1[1],from1[0],h,min);
+							console.log(new_date);
+							if(dec_time[1].toLowerCase() == 'pm'){
+								new_date.setHours(new_date.getHours() + (Number(0) + 12));
+							} else {
+								new_date.setHours(new_date.getHours() + Number(0));
+							}
+							var date_sting = new_date.getDate() + ' ' + month[new_date.getMonth()] + ' ' + new_date.getFullYear() + ' at ' + new_date.getHours() + ':' + new_date.getMinutes() + ' ' + dec_time[1];
+							//$(".datetime").html(date_sting);
+							console.log(date_sting);
+							var data_date = new_date.getDate() + '/' + new_date.getMonth() + '/' + new_date.getFullYear();
+							
+							var temp_locale = new_date.toLocaleString('en-US', { hour: 'numeric', hour12: true });
+							
+							var temp_locale_dec = temp_locale.split(' ');
+							
+							var data_time = new_date.getHours() + ':' + new_date.getMinutes() + ' ' + temp_locale_dec[1]; 
+							$('#updated_sparedate_hidden').val(new_date.getFullYear() + '-' + new_date.getMonth() + '-' + new_date.getDate());
+							$('#updated_date_hidden').val(data_date);
+							$('#updated_time_hidden').val(data_time);
+						}
+					}
+				   
+	               
+				   
+				   if ($(".date1").val() == '' || $(".time1").val() == '')
+	               {
+	                   $(".first").prop('disabled', true);
+	               } else{
+	                   $(".first").prop('disabled', false);
+	               }
+				   
+	           });
+	           var rangeSlider = function() {
+	           var slider = $('.range-slider'),
+	                   range = $('.range-slider__range'),
+	                   value = $('.range-slider__value');
+	           slider.each(function() {
+	
+	           value.each(function() {
+	           var value = $(this).prev().attr('value');
+	           $(this).html(value);
+	           });
+	           range.on('input', function() {
+	           //$(this).next(value).html(this.value);
+	               $('.left').html($(".range-slider__range").val());
+	               $('.no_of_people').html($(".range-slider__range").val());
+	               item ['no_of_people'] = $(".range-slider__range").val();
+	           });
+	       });
+	       };
+	       rangeSlider();
+	       //sliders();
+	       //cakes slider1
+	       $('.wizard-inner a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
+	           sliders();
+	       });
+	       });
+	       function sliders()
+	               {
+	               var swiper2 = new Swiper('.ck-tab-3-sld-1 .swiper-container', {
+	                       nextButton: '.ck-tab-3-sld-1 .swiper-button-next',
+	                       prevButton: '.ck-tab-3-sld-1 .swiper-button-prev',
+	                       paginationClickable: true,
+	                       slidesPerView: 7,
+	                       spaceBetween: 10,
+	                       freeMode: true,
+	                       breakpoints: {
+	                       1024: {
+	                       slidesPerView: 5,
+	                               spaceBetween: 5
+	                       },
+	                       768: {
+	                       slidesPerView: 3,
+	                               spaceBetween: 10
+	                       },
+	                       640: {
+	                       slidesPerView: 2,
+	                               spaceBetween: 10
+	                        },
+	                       320: {
+	                       slidesPerView: 1,
+	                               spaceBetween: 10
+	                               }
+	                       }
+	               });
+	               //cakes slider2
+	               var swiper3 = new Swiper('.ck-tab-3-sld-2 .swiper-container', {
+	               nextButton: '.ck-tab-3-sld-2 .swiper-button-next',
+	                       prevButton: '.ck-tab-3-sld-2 .swiper-button-prev',
+	                       paginationClickable: true,
+	                       slidesPerView: 7,
+	                       spaceBetween: 10,
+	                       freeMode: false,
+	                       breakpoints: {
+	                       1024: {
+	                       slidesPerView: 4,
+	                               spaceBetween: 10
+	                       },
+	                               768: {
+	                               slidesPerView: 3,
+	                                       spaceBetween: 10
+	                               },
+	                               640: {
+	                               slidesPerView: 2,
+	                                       spaceBetween: 10
+	                               },
+	                               320: {
+	                               slidesPerView: 1,
+	                                       spaceBetween: 10
+	                               }
+	                       }
+	               });
+	               var swiper4 = new Swiper('.ck-tab-3-sld-3 .swiper-container', {
+	               nextButton: '.ck-tab-3-sld-3',
+	                       prevButton: '.ck-tab-3-sld-3 ',
+	                       paginationClickable: true,
+	                       slidesPerView: 4,
+	                       spaceBetween: 10,
+	                       freeMode: false,
+	                       breakpoints: {
+	                       1024: {
+	                       slidesPerView: 4,
+	                               spaceBetween: 10
+	                       },
+	                               768: {
+	                               slidesPerView: 3,
+	                                       spaceBetween: 10
+	                               },
+	                               640: {
+	                               slidesPerView: 2,
+	                                       spaceBetween: 10
+	                               },
+	                               320: {
+	                               slidesPerView: 1,
+	                                       spaceBetween: 10
+	                               }
+	                       }
+	               });
+	               var swiper5 = new Swiper('.ck-tab-4-sld-1 .swiper-container', {
+	               nextButton: '.ck-tab-4-sld-1',
+	                       prevButton: '.ck-tab-4-sld-1 ',
+	                       paginationClickable: true,
+	                       slidesPerView:6,
+	                     //  slidesPerColumn: 4,
+	                       spaceBetween: 10,
+	                       freeMode: false,
+	                       breakpoints: {
+	                       1024: {
+	                       slidesPerView: 4,
+	                               spaceBetween: 10
+	                       },
+	                               768: {
+	                               slidesPerView: 3,
+	                                       spaceBetween: 10
+	                               },
+	                               640: {
+	                               slidesPerView: 2,
+	                                       spaceBetween: 10
+	                               },
+	                               320: {
+	                               slidesPerView: 1,
+	                                       spaceBetween: 10
+	                               }
+	                       }
+	               });
+	               setTimeout(function(){ 
+	                   swiper2.update();
+	                   swiper3.update();
+	                   swiper4.update();
+	               }, 3000);
+	           }
+	       function getlayers(shape_id,shape_name)
+
+
+	               {
+
+					   if(shape_id == 1){
+						$('#layers2').addClass('vih');
+					   $('#layers1').removeClass('vih');
+
+					   }else if(shape_id == 3){
+						$('#layers1').addClass('vih');
+						$('#layers2').removeClass('vih');
+
+					   }
+	
+	                   get_image_path();
+	                    
+	               }
+	
+		$('.range-slider__range').change(function(){
+			//var no_items = $('.range-slider__range').val();
+			var no_items = 1;
+			var amt = $('.amt').text();
+			var amount= amt.substr(0, amt.indexOf(' P'));
+			var single_cake_price= $('#single_cake_price').val();
+			quantity = Number(no_items);
+			if(Number(single_cake_price) > 0){
+				//$(".amt").html((Number(no_items) * Number(single_cake_price)).toFixed(3) + ' KWD');
+				$("#first_step_amt").val((Number(no_items) * Number(single_cake_price)).toFixed(3));
+			}
+		});
+				
+	       function selectlayer(layer_id, image, la_number)
+	       {
+
+				$(".layer").removeClass('active');
+	           $("#la" + layer_id).addClass('active');
+	           $(".layer_right").attr('src', image);
+	           var la_price = $("#la_price_" + layer_id).val();
+				//var quantity = Number($('.range-slider__range').val());
+				var quantity = 1;
+	           ingradiance['layer_id'] = layer_id;
+	           layer_number = la_number;
+	           tot[0] = parseFloat(la_price);
+			   console.log('layer price : ');
+			   console.log(tot);
+				$('#single_cake_price').val(parseFloat(la_price));
+				$('#first_step_amt').val(quantity * parseFloat(la_price));
+				//$('#first_part_amt').val(quantity * parseFloat(la_price));
+	           
+			   $(".amt").html(((parseFloat(amt) + tot[0]) * quantity).toFixed(3) + ' PKR');
+			  
+			   if(page_load != 1){
+				$(".amt").html(((parseFloat(amt) + tot[0]) * quantity).toFixed(3) + ' PKR');
+			   }
+			   page_load = page_load + 1; 
+	           
+			   
+			   item ['amount'] = parseFloat(amt) + tot[0];
+	           item ['layer_id'] = layer_id;
+	           item ['quantity'] = quantity;
+	           item ['layer_number'] = la_number;
+	
+	
+			//    rightdiv
+			// var myimg = "https://www.thecakeshop.com.kw/"+image;
+			$("#val1").val(layer_id);
+		
+			$("#val2").val(la_number);
+
+
+			$("#rightdiv").setAttribute('src','');
+	        $("#rightdiv").attr("src",image	);
+	        //    setImage_dim();
+
+	        
+	           if( item1 ['shape_name'] == 'Round Shape Cake' )
+	           {
+	               $('.square').remove();
+	                   $('.square-layer2').remove();
+	                    if (la_number == 2)
+	                    {
+	                        $('.cake-top-img-real').css({"top":"42px", "width":"107px", "left":"66px"});
+	                    }
+	                    if (la_number == 1)
+	                    {
+	                        $('.cake-top-img-real').css({"top":"28px", "width":"147px", "left":"48px"});
+	                    }
+	                    if (la_number == 3)
+	                    {
+	                        $('.cake-top-img-real').css({"top":"37px", "width":"80px", "left":"81px"});
+	                    }
+	                    if (la_number == 4)
+	                    {
+	                        $('.cake-top-img-real').css({"top":"40px ", "width":"59px", "left":"90px"});
+	                    }
+	                }
+	           if( item1 ['shape_name'] == 'Square Shape Cake' ){
+	               if (la_number == 1)
+	               {
+	
+	
+	                   //alert("1 layer with square Shape");
+	                    $('.cake-top-img-real').remove();
+	                   $('.square').remove();
+	                   $('.square-layer2').remove();
+	                   caketopimageHtml = '<div class="square"><div class="pic"></div></div>';
+	
+	                   $('.my-cak').prepend(caketopimageHtml);
+	                   $('.pic').css({"background":"url(http://i-managed.biz/thecakeshop/bundles/design/imagetopdecorationimage/1512552712_3-16.png)", "width":"195px", "left":"66px"});
+	               }
+	                if (la_number == 2)
+	               {
+	
+	                   alert("2 layer with square Shape");
+	
+	                    $('.cake-top-img-real').remove();
+	                   $('.square').remove();
+	                   $('.square-layer2').remove();
+	                   caketopimageHtml = '<div class="square-layer2"><div class="pic-layer2"></div></div>';
+	
+	                   $('.my-cak').prepend(caketopimageHtml);
+	                   $('.pic-layer2').css({"background":"url(http://i-managed.biz/thecakeshop/bundles/design/imagetopdecorationimage/1512552712_3-16.png)", "width":"114px", "left":"66px"});
+	               }
+	           }
+
+	           get_image_path();
+	           //canvas_img.attr('src',get_image_path());
+	       }
+	       function selectcake(cakeid, price, cake_name)
+	       {
+	
+	         $(".cakes").removeClass('active');
+	         $("#cake" + cakeid).addClass('active');
+	         ingradiance['cake_id'] = cakeid;
+	         $(".cake_name").html(cake_name);
+	         $(".amt").html(parseFloat(price).toFixed(3));
+			 
+	         amt = price;
+	         item['amount'] = amt;
+	         item['cake_id'] = cakeid;
+	         item1 ['cake_name'] = cake_name;
+	         dataStore1 = document.cookie = "create_cake_text=" + JSON.stringify(item1);
+	         dataStore = document.cookie = "create_cake_id=" + JSON.stringify(item);
+	         get_image_path();
+	         //canvas_img.attr('src',get_image_path());
+	         //console.log(dataStore1);
+	       }
+	       function selectdate(date_string)
+	               {
+	               data['date'] = $(".date1").val();
+	               }
+			function selecttime(time_string){
+			
+				var sel_date = $('#date').val();
+				var sel_time = $(".time1").val();
+			   
+				console.log('1');
+			   
+				var from1 = sel_date.split("index.html");
+				data['time'] = $(".time1").val();
+				if(from1.length > 0){
+					console.log('2');
+					var dec_time = sel_time.split(' ');
+					if(dec_time.length > 0){
+						console.log('3');
+						var h = dec_time[0].substr(0,dec_time[0].indexOf(":"));
+						var min = dec_time[0].substr(dec_time[0].indexOf(":")+1);							
+						var new_date = new Date(from1[2],from1[1],from1[0],h,min);
+						console.log(new_date);
+						if(dec_time[1].toLowerCase() == 'pm'){
+							new_date.setHours(new_date.getHours() + (Number(0) + 12));
+						} else {
+							new_date.setHours(new_date.getHours() + Number(0));
+						}
+						//var date_sting = new_date.getDate() + ' ' + month[new_date.getMonth()] + ' ' + new_date.getFullYear() + ' at ' + new_date.getHours() + ':' + new_date.getMinutes() + ' ' + dec_time[1];
+						//$(".datetime").html(date_sting);
+						console.log('date changed - ' + new_date);
+						data['time'] = new_date.getHours() + ':' + new_date.getMinutes() + ' ' + dec_time[1];
+					}
+				}
+				
+	        }
+			
+	       function select_falvor(flavor_id, flavor_name)
+	               {
+
+
+			
+					console.log('select_falvor func...');
+
+				 var val1 =	$("#val1").val();
+			     var val2  =    $("#val2").val(); 
+	
+
+				if(flavor_id == 2){
+
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/1_5_2.png");
+					
+				}
+				if(flavor_id == 3){
+
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/1_5_3.png");
+					
+				}
+				if(flavor_id == 4){
+
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/1_5_4.png");
+					
+				}
+
+				 if(val1 == 5 &&  flavor_id == 2){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/1_5_2.png");
+
+				 }
+
+				 else if(val1 == 5 &&  flavor_id == 3){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/1_5_3.png");
+
+				 }
+
+				 else if(val1 == 5 &&  flavor_id == 4){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/1_5_4.png");
+
+				 }
+
+
+				 else if(val1 == 14 &&  flavor_id == 2){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/1_14_2.png");
+
+				 }
+
+				 else if(val1 == 14 &&  flavor_id == 3){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/1_14_3.png");
+
+				 }
+
+				 else if(val1 == 14 &&  flavor_id == 4){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/1_14_4.png");
+
+				 }
+
+				 
+				 else if(val1 == 16 &&  flavor_id == 2){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/1_16_2.png");
+
+				 }
+
+				 else if(val1 == 16 &&  flavor_id == 3){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/1_16_3.png");
+
+				 }
+
+				 else if(val1 == 16 &&  flavor_id == 4){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/1_16_4.png");
+
+
+				 }else if(val1 == 18 &&  flavor_id == 2){
+					var img = document.getElementById('rightdiv');
+
+					img.setAttribute('src', '');
+					
+	                $("#rightdiv").attr("src","./images/customDesign/3_18_2.png");
+
+				 }
+
+				 else if(val1 == 18 &&  flavor_id == 3){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/3_18_3.png");
+
+				 }
+
+				 else if(val1 == 18 &&  flavor_id == 4){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/3_18_4.png");
+
+				 }
+
+
+				 else if(val1 == 19 &&  flavor_id == 2){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/3_19_2.png");
+
+				 }
+
+				 else if(val1 == 19 &&  flavor_id == 3){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/3_19_3.png");
+
+				 }
+
+				 else if(val1 == 19 &&  flavor_id == 4){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/3_19_4.png");
+
+				 }
+
+				 
+				 else if(val1 == 20 &&  flavor_id == 2){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/3_20_2.png");
+
+				 }
+
+				 else if(val1 == 20 &&  flavor_id == 3){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/3_20_3.png");
+
+				 }
+
+				 else if(val1 == 20 &&  flavor_id == 4){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/3_20_4.png");
+
+				 }
+
+
+	               $(".flavor").removeClass('active');
+	               $("#flavor" + flavor_id).addClass('active');
+	               $(".flavor_name").html(flavor_name);
+	               ingradiance['spongeflavor_id'] = flavor_id;
+	               var fa_price = $("#fa_price_" + flavor_id).val();
+				//var quantity = $(".range-slider__range").val();
+				var quantity = 1;
+				if(Number(quantity) > 0){
+					tot[1] = parseFloat(Number(quantity) * fa_price);
+				} else {
+					tot[1] = parseFloat(fa_price);
+				}
+	               tot_amount();
+	               item ['spongeflavor_id'] = flavor_id;
+	              item ['layer_id'] = layer_id;
+	               dataStore1 = document.cookie = "create_cake_text=" + JSON.stringify(item1);
+	               console.log(dataStore1);
+	               get_image_path();
+	               canvas_img.attr('src',get_image_path());
+	               
+	                   src3 = 'bundles/design/master_data/shape/layers/Sponge_Flavor/';
+	                   src3 = src3 + item['shape_id']+'_'+ item['layer_id'] + '_' + item['spongeflavor_id'] +'.png';
+		               $('.cake-toping-img-real').css('display','block');
+	                   $('.cake-toping-img-real').attr('src',src3);
+	                  $('.layer_right').attr('src',"");
+	               
+	                get_image_path();
+	               }
+	       function select_topfilling(topfilling_id, topfilling_name)
+	               {
+	                
+console.log('select_topfilling func...');
+					var val1 =	$("#val1").val();
+
+					console.log(val1);
+					console.log(topfilling_id);
+
+
+					if(topfilling_id == 1 && topfilling_id == null){
+					var imged = document.getElementById('rightdiv');
+					imged.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/1_5_Y_1.png");
+
+
+				 }
+
+				 else if(topfilling_id == 3 && topfilling_id == null){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/1_5_Y_3.png");
+
+				 }
+
+				 else if(topfilling_id == 4 && topfilling_id == null){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/1_5_Y_4.png");
+
+				 }
+
+				 
+				 else if(topfilling_id == 6 && topfilling_id == null){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/1_5_Y_6.png");
+
+				 }
+
+				 else if(topfilling_id == 7 && topfilling_id ==  null){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/1_5_Y_7.png");
+
+				 }
+					
+					else if(val1 == 5 &&  topfilling_id == 1){
+					var imged = document.getElementById('rightdiv');
+					imged.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/1_5_Y_1.png");
+
+
+				 }
+
+				 else if(val1 == 5 &&  topfilling_id == 3){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/1_5_Y_3.png");
+
+				 }
+
+				 else if(val1 == 5 &&  topfilling_id == 4){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/1_5_Y_4.png");
+
+				 }
+
+				 
+				 else if(val1 == 5 &&  topfilling_id == 6){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/1_5_Y_6.png");
+
+				 }
+
+				 else if(val1 == 5 &&  topfilling_id == 7){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/1_5_Y_7.png");
+
+				 }
+				 
+
+				else if(val1 == 14 &&  topfilling_id == 1){
+					var imged = document.getElementById('rightdiv');
+					imged.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/1_14_Y_1.png");
+
+
+				 }
+
+				 else if(val1 == 14 &&  topfilling_id == 3){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/1_14_Y_3.png");
+
+				 }
+
+				 else if(val1 == 14 &&  topfilling_id == 4){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/1_14_Y_4.png");
+
+				 }
+
+
+				 
+				 
+				 else if(val1 == 14 &&  topfilling_id == 6){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/1_14_Y_6.png");
+
+				 }
+
+				 else if(val1 == 14 &&  topfilling_id == 7){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/1_14_Y_7.png");
+
+				 }
+				 
+
+				 else if(val1 == 16 &&  topfilling_id == 1){
+					var imged = document.getElementById('rightdiv');
+					imged.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/1_16_Y_1.png");
+
+
+				 }
+
+				 else if(val1 == 16 &&  topfilling_id == 3){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/1_16_Y_3.png");
+
+				 }
+
+				 else if(val1 == 16 &&  topfilling_id == 4){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/1_16_Y_4.png");
+
+				 }
+
+				 
+				 else if(val1 == 16 &&  topfilling_id == 6){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/1_16_Y_6.png");
+
+				 }
+
+				 else if(val1 == 16 &&  topfilling_id == 7){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/1_16_Y_7.png");
+
+				 }
+
+				 else if(val1 == 18 &&  topfilling_id == 1){
+					var imged = document.getElementById('rightdiv');
+					imged.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/3_18_Y_1.png");
+
+
+				 }
+
+				 else if(val1 == 18 &&  topfilling_id == 3){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/3_18_Y_3.png");
+
+				 }
+
+				 else if(val1 == 18 &&  topfilling_id == 4){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/3_18_Y_4.png");
+
+				 }
+
+				 
+				 else if(val1 == 18 &&  topfilling_id == 6){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/3_18_Y_6.png");
+
+				 }
+
+				 else if(val1 == 18 &&  topfilling_id == 7){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/3_18_Y_7.png");
+
+				 }
+				 
+
+				else if(val1 == 19 &&  topfilling_id == 1){
+					var imged = document.getElementById('rightdiv');
+					imged.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/3_19_Y_1.png");
+
+
+				 }
+
+				 else if(val1 == 19 &&  topfilling_id == 3){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/3_19_Y_3.png");
+
+				 }
+
+				 else if(val1 == 19 &&  topfilling_id == 4){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/3_19_Y_4.png");
+
+				 }
+
+				 
+				 else if(val1 == 19 &&  topfilling_id == 6){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/3_19_Y_6.png");
+
+				 }
+
+				 else if(val1 == 19 &&  topfilling_id == 7){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/3_19_Y_7.png");
+
+				 }
+				 
+
+				 else if(val1 == 20 &&  topfilling_id == 1){
+					var imged = document.getElementById('rightdiv');
+					imged.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/3_20_Y_1.png");
+
+
+				 }
+
+				 else if(val1 == 20 &&  topfilling_id == 3){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/3_20_Y_3.png");
+
+				 }
+
+				 else if(val1 == 20 &&  topfilling_id == 4){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/3_20_Y_4.png");
+
+				 }
+
+				 
+				 else if(val1 == 20 &&  topfilling_id == 6){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/3_20_Y_6.png");
+
+				 }
+
+				 else if(val1 == 20 &&  topfilling_id == 7){
+					var img = document.getElementById('rightdiv');
+					img.setAttribute('src', '');
+	                $("#rightdiv").attr("src","./images/customDesign/3_20_Y_7.png");
+
+				 }
+	
+				 
+
+	                   if(ingradiance['spongeflavor_id']==null){
+	                       $('#myModal').modal('show');
+	                       $(".msg").html("Please Select Flavor");
+	                   }else{
+	                       $(".topfilling").removeClass('active');
+	                       $("#topfilling" + topfilling_id).addClass('active');
+	                       $(".topfilling_name").html(topfilling_name);
+	                       ingradiance['fillingtopdecoration_id'] = topfilling_id;
+	                       var fi_price = $("#fi_price_" + topfilling_id).val();
+						
+						
+						// console.log(fi_price);
+						// console.log(tot);
+						//var quantity = $(".range-slider__range").val();
+						var quantity = 1;
+						if(Number(quantity) > 0){
+							tot[2] = parseFloat(Number(quantity) * fi_price);
+						} else {
+							tot[2] = parseFloat(fi_price);
+						}
+	                       
+	                       tot_amount();
+	                       item1 ['topfilling_name'] = topfilling_name;
+	                       item ['fillingtopdecoration_id'] = topfilling_id;
+	                       //canvas_obj.html('');
+	                       dataStore1 = document.cookie = "create_cake_text=" + JSON.stringify(item1);
+	                    //    console.log(dataStore1);
+						  
+	                    //    get_image_path();
+						  
+	                       //canvas_img.attr('src',get_image_path());
+
+
+	                   }                
+	               }
+	       function select_printimage(printimage_id, printimage_name,printimage_price,printimage)
+	       {
+			   console.log('call-1');
+			var validate_sponge = false;
+			$('.validate-sponge').each(function(){
+				if($(this).hasClass('active')){
+					validate_sponge = true;
+				}
+			});
+			if(validate_sponge == false){
+				//alert('Please Choose Spong Flavor');
+				$('#myModal').modal('show');
+	               $(".msg").html("Please Choose Spong Flavor");
+				return false;
+			}
+	          // alert("image id " + printimage_name);
+	           $(".printimage").removeClass('active');
+	           $("#printimage" + printimage_id).addClass('active');
+	           $(".printimage_name").html(printimage_name);
+	           ingradiance['imagetopdecoration_id'] = printimage_id;
+	           var td_price = $("#td_price_" + printimage_id).val();
+	            td_price = td_price + 200;
+			//var quantity = $(".range-slider__range").val();
+			var quantity = 1;
+			if(Number(quantity) > 0){
+				tot[3] = parseFloat(td_price * quantity);
+			} else {
+				tot[3] = parseFloat(td_price);
+			}
+			
+			tot_amount();
+	           item1 ['printimage_name'] = printimage_name;
+	           item1 ['printimage_image'] = printimage;
+	           item ['imagetopdecoration_id'] = printimage_id;
+	           dataStore1 = document.cookie = "create_cake_text=" + JSON.stringify(item1);
+	           setImage_top_image(item1 ['printimage_image']);
+	      //  console.log(item1['printimage_image']);
+	   setImage_dim();
+	       }
+	       function unsetImage_top_image(txt)
+	       {
+			var is_true = false;
+			$('.printimage').each(function(){
+				if($(this).hasClass('active')){
+					is_true = true;
+				}
+			});
+		
+	         //alert('yes1');
+
+	         $(".printimage").removeClass('active');
+	         $("#printimage0").addClass('active');
+	         $(".printimage_name").html(''+txt+'');
+	         ingradiance['imagetopdecoration_id'] = item ['imagetopdecoration_id'] = 0;
+	         $('.cake-top-img-real').hide();
+
+
+		  
+			if(is_true){
+				
+				
+				var amount_1 = second_part_retain_price + printimage_price;
+				console.log("beforedelivery charges"+amount_1);
+				var amount_1 = amount_1 + 200 ;
+
+				console.log("after delivery charges"+amount_1);
+
+
+				
+				$("#third_part_amt").html(parseFloat(amount_1).toFixed(3) + ' PKR');
+				tot[3] = 0;
+				tot_amount();
+			}
+	       }
+	
+	       function select_sidedecoration(sidedecoration_id, sidedecoration_name)
+	               {
+	
+	                   $(".sidedecoration").removeClass('active');
+	                   $("#sidedecoration" + sidedecoration_id).addClass('active');
+	                   $(".sidedecoration_name").html(sidedecoration_name);
+	                   ingradiance['sidedecoration_id'] = sidedecoration_id;
+	                   var sd_price = $("#sd_price_" + sidedecoration_id).val();
+					//tot[4] = parseFloat(sd_price);
+	                   tot[4] = parseFloat(0);
+	                   tot_amount();
+	               //    item1 ['sidedecoration_name'] = sidedecoration_name;
+	                   item1 ['sidedecoration_name'] = 'default_name';
+	               //    item ['sidedecoration_id'] = sidedecoration_id;
+	                   item ['sidedecoration_id'] = 0;
+	                   dataStore1 = document.cookie = "create_cake_text=" + JSON.stringify(item1);
+	                   //console.log(dataStore1);
+	                   //get_image_path();
+	                   //canvas_img.attr('src',get_image_path());
+	               }
+				   
+			var main_total = 0;
+			function tot_amount(){
+			
+				var total = 0;
+				for (i = 1; i < tot.length; i++)
+					total += tot[i];
+					
+				//$(".amt").html((parseFloat(amt) + total).toFixed(3) + ' KWD');
+				var first_step_amt = $('#first_step_amt').val();
+
+				
+				if(Number(first_step_amt) > 0){
+					$(".amt").html((parseFloat(first_step_amt) + total).toFixed(3) + ' PKR');
+				
+					main_total = parseFloat(first_step_amt) + total ;
+
+					main_total = main_total + 200;
+
+				} else {
+					$(".amt").html((parseFloat(amt) + total).toFixed(3) + ' PKR');
+					main_total = parseFloat(amt) + total;
+				}
+
+				var fprice =  main_total;
+
+				//arooba
+				$(".amt").html(parseFloat(fprice).toFixed(3) + ' PKR');
+				console.log("yes"+item ['amount']);
+			}
+	
+	       $("#add_to_cart").click(function(){
+	           
+			   //$('#myModal').modal('show');
+	           //$(".msg").html("Login Please to Add item to cart");
+			   let access_token = sessionStorage.getItem("access_token");
+			   if(access_token == null){
+				  $('#myModal').modal('show');
+	              $(".msg").html("Login Please to Add item to cart");
+			    }else{
+					add_to_session();
+				}		   
+	       });
+	
+	       function add_to_session()
+	       {
+	           // update_create_cake_detail(0,$(".date1").val(),$(".time1").val(),ingradiance['cake_id'],$(".left").val());		
+	           document.cookie = "step=" + 0;
+	           //data['date'] = $(".date1").val();
+	           data['date'] = $("#updated_date_hidden").val();
+	           data['spare_date'] = $("#updated_sparedate_hidden").val();
+	           //data['time'] = $(".time1").val();
+			   data['time'] = $("#updated_time_hidden").val();
+	           data['cake_id'] = ingradiance['cake_id'];
+	           data['layer_id'] = ingradiance['layer_id'];
+	           data['number_of_people'] = $('.range-slider__range').val();
+	           data['spongeflavor_id'] = ingradiance['spongeflavor_id'];
+	           data['fillingtopdecoration_id'] = ingradiance['fillingtopdecoration_id'];
+	           data['imagetopdecoration_id'] = ingradiance['imagetopdecoration_id'];
+			   data['icing'] = icing;
+	           //data['sidedecoration_id'] = ingradiance['sidedecoration_id'];
+			   data['sidedecoration_id'] = 0;
+	           data['amount'] = main_total;
+	           data['msg_on_cake'] = $('#msg_on_cake').val();
+	           data['msg_color_id'] = $("#colorcheck").val();
+	           //data['quantity'] = Number($(".range-slider__range").val());
+	           data['quantity'] = 1;
+	           data['special_instruction'] = $("#spec_note").val();
+			   var img_top_style = $('.cake-top-img-real').attr('style');
+			   var access_token = localStorage.getItem("access_token");
+	
+	           console.log(data);
+	
+	           //call ajax for add item to cart.
+	       //    order_type = 'pickup';
+	           order_type = data['order_type'];
+	           $.ajax
+	                   ({
+	                   type: 'POST',
+	                   url : "http://127.0.0.1:8000/customizeorder/post/",
+					   headers: { "authorization": "Bearer " + access_token },
+	                   data: 'token='+ access_token +'&layer_id=' + data['layer_id'] + '&spongeflavor_id=' + data['spongeflavor_id'] + '&fillingtopdecoration_id=' + data['fillingtopdecoration_id'] +
+							    '&imagetopdecoration_id=' + data['imagetopdecoration_id'] + '&icing=' + data['icing'] + '&amount=' + data['amount']  + '&msg_on_cake=' + data['msg_on_cake'] + '&msg_color_id=' + data['msg_color_id']+'&special_instruction='+data['special_instruction'],
+	                           success:function(response){
+								console.log("response",response)
+	                            if(response)
+	                            { 
+								 sessionStorage.setItem("CustomOrder_Id", response.id);
+								 setTimeout(function(){ window.location= '/CustomOrderCheckout'}, 3000);
+	                            }
+	                           else{
+								   $('#myModal').modal('show');
+	                               $(".msg").html('Something went wrong! Please contact Bake and Take.');
+	                           } 
+	                        }
+	                   });
+	           //location.reload();
+	       }
+	       function get_image_path()
+	       {
+	         var path = '#';
+	         path = 'bundles/design/master_data/shape/index.html';
+	         var file_name = '';
+	         var ext = '.png';
+	
+	         if(item ['shape_id'] != null)
+	         {
+	             file_name = item ['shape_id'];
+	             path = path+'';
+	         }
+	         if(item ['layer_id'] != null)
+	         {
+	             file_name = file_name+'_'+item ['layer_id'];
+	             path = path+'layers/';
+	         }
+	         if(item ['spongeflavor_id'] != null)
+	         {
+	             //file_name = file_name+'_0';
+	            // file_name = file_name+'_'+item ['spongeflavor_id'];
+	
+	
+	             if(item ['fillingtopdecoration_id'] != null)
+	             {
+	               file_name = file_name+'_Y';
+	             }
+	             else{
+	               file_name = file_name+'_'+item ['spongeflavor_id'];
+	             }
+	             path = path+'Sponge_Flavor/';
+	         }
+	         if(item ['fillingtopdecoration_id'] != null)
+	         {
+	             //if(item ['imagetopdecoration_id'] != null)
+	             //{
+	               //file_name = file_name+'_X';
+	             //}
+	             //else{
+	               file_name = file_name+'_'+item ['fillingtopdecoration_id'];
+	              // console.log(file_name);
+	             //}
+	             path = path+'Icing/';
+	         }
+	         if(item ['sidedecoration_id'] != null)
+	         {
+	             //file_name = file_name+'_'+item ['sidedecoration_id'];
+	             //path = path+'Sprinkles/';
+	         }
+			 //latest
+	         file_name = 'https://www.thecakeshop.com.kw/bundles/design/layerimage/1517234358_1_14.png';
+	         //alert(path+file_name);
+	         //canvas_img.attr('src',''+path+file_name+'');
+	         console.log(path+file_name);
+	         //alert(path+file_name);
+	         $('.layer_right').each(function(){
+	                 //Change the src of each img
+	                 $(this).attr('src', ''+file_name+'');
+	           });
+	           //alert(item ['imagetopdecoration_id']);
+	           if(item ['imagetopdecoration_id'] != null && item ['imagetopdecoration_id'] != 0)
+	           {
+	               setImage_top_image(item1 ['printimage_image']);
+	           }
+	
+	
+	         return 1;
+	
+	         /*
+	           alert(item ['shape_id']);
+	           alert(item ['layer_id']);
+	           alert(item ['cake_id']);
+	           alert(item ['spongeflavor_id']);
+	           alert(item ['fillingtopdecoration_id']);
+	           alert(item ['sidedecoration_id']);
+	         */
+	       }
+	
+	       function setImage_dim()
+	       {
+	         //alert(item ['layer_id']);
+	         /*
+	         var layerimg=$('.layer_right').attr('src');
+	         $('.middel-bag').html('<img  src="'+layerimg+'" class="layer_right" />');
+	         //<img src="'+item1 ['printimage_image']+'" class="cake-top-img-real">
+	          if (item ['layer_number'] == 2)
+	          {
+	              //$('.cake-top-img-real').css({"top":"42px", "width":"107px", "left":"66px"});
+	          }
+	          */
+	           if(item ['shape_id'] != null && item ['layer_id'] != null)
+	           {
+	             if(item ['shape_id'] == '1')
+	             {
+	               img_dim1['transform'] = 'rotateX(51deg) translateZ(61px)';
+	               img_dim1['width'] = '160px';
+	               img_dim1['border-radius'] = '50%';
+	 		          img_dim1['z-index'] = '1';
+	               img_dim1['clip-path'] = '';
+	               img_dim1['-webkit-clip-path'] = '';
+	               //img_dim1['height'] = '106px';
+	               if(item ['layer_id'] == '5' || item ['layer_id'] == 5)
+	               {
+	                   //alert('yes');
+	                   img_dim1['top'] = '147px';
+	                   img_dim1['width'] = '160px';
+	                   img_dim1['left'] = '56px';
+	                   img_dim1['height'] = '106px';
+	               }
+	               if(item ['layer_id'] == '14' || item ['layer_id'] == 14)
+	               {
+	                   //alert('yes');
+	                   img_dim1['top'] = '110px';
+	                   img_dim1['width'] = '115px';
+	                   img_dim1['left'] = '79px';
+	                   img_dim1['height'] = '73px';
+	
+	               }
+	               if(item ['layer_id'] == '16' || item ['layer_id'] == 16)
+	               {
+	
+	                   //alert('yes');
+	                   img_dim1['top'] = '81px';
+	                   img_dim1['width'] = '87px';
+	                   img_dim1['left'] = '92px';
+	                   img_dim1['height'] = '56px';
+	
+	               }
+	               if(item ['layer_id'] == '17' || item ['layer_id'] == 17)
+	               {
+	                   //alert('yes');
+	                   img_dim1['top'] = '56px';
+	                   img_dim1['width'] = '67px';
+	                   img_dim1['left'] = '103px';
+	                   img_dim1['height'] = '42px';
+	
+	               }
+	             }
+	             if(item ['shape_id'] == '3')
+	             {
+	                 img_dim1['border-radius'] = '0px';
+	
+	                 if(item ['layer_id'] == '18' || item ['layer_id'] == 18)
+	                 {
+					          img_dim1['top'] = '111px';
+	                   img_dim1['width'] = '44px';
+					          img_dim1['height'] = '106px';
+	                   img_dim1['left'] = '113px';
+	                   //img_dim1['transform'] = 'rotate(-75deg) skewY(59deg)';
+	                   img_dim1['transform'] = 'rotateZ(-77deg) rotateX(0deg) rotateY(0deg) skewY(65deg) skewX(0deg)';
+	                   img_dim1['-webkit-clip-path'] = img_dim1['clip-path'] = 'polygon(8% 6%,90% 8%,100% 88%,0% 100%)';
+	                 }
+	
+				          if(item ['layer_id'] == '19' || item ['layer_id'] == 19)
+	                 {
+					           img_dim1['top'] = '85px';
+	                    img_dim1['width'] = '35px';
+					           img_dim1['height'] = '65px';
+	                    img_dim1['left'] = '119px';
+	                    img_dim1['transform'] = 'rotateZ(-74deg) rotateX(0deg) rotateY(0deg) skewY(60deg) skewX(0deg)';
+	                    img_dim1['-webkit-clip-path'] = img_dim1['clip-path'] = 'polygon(1% 0%,81% 11%,100% 97%,6% 97%)';
+	                 }
+	
+				          if(item ['layer_id'] == '20' || item ['layer_id'] == 20)
+	                 {
+					           img_dim1['top'] = '61px';
+	                    img_dim1['width'] = '28px';
+					           img_dim1['height'] = '46px';
+	                    img_dim1['left'] = '122px';
+	                    img_dim1['transform'] = 'rotateZ(-74deg) rotateX(0deg) rotateY(0deg) skewY(60deg) skewX(0deg)';
+	                    img_dim1['-webkit-clip-path'] = img_dim1['clip-path'] = 'polygon(5% 2%, 90% 10%, 99% 96%, 13% 98%)';
+	                 }
+	
+				          if(item ['layer_id'] == '21' || item ['layer_id'] == 21)
+	                 {
+					           img_dim1['top'] = '43px';
+	                    img_dim1['width'] = '21px';
+					           img_dim1['height'] = '35px';
+	                    img_dim1['left'] = '126px';
+	                    img_dim1['transform'] = 'rotateZ(-74deg) rotateX(0deg) rotateY(0deg) skewY(60deg) skewX(0deg)';
+	                    img_dim1['-webkit-clip-path'] = img_dim1[' clip-path'] = 'polygon(12% 0%, 95% 5%, 94% 97%, 8% 99%)';
+	                 }
+	             }
+	            if(item ['shape_id'] == '4')
+	             {
+	                 img_dim1['border-radius'] = '0px';
+	
+	                 if(item ['layer_id'] == '22' || item ['layer_id'] == 22)
+	                 {
+	                    img_dim1['top'] = '111px';
+	                    img_dim1['width'] = '169px';
+			               img_dim1['height'] = '119px';
+	                    img_dim1['left'] = '51px';
+	                    //img_dim1['transform'] = 'rotate(-75deg) skewY(59deg)';
+	                    img_dim1['transform'] = 'rotateZ(1deg) rotateX(50deg) rotateY(0deg) skewY(0deg) skewX(0deg)';
+	                    img_dim1['-webkit-clip-path'] = img_dim1['clip-path'] = 'polygon(100% 53%, 72% 99%, 23% 99%, 1px 48%, 28% 0px, 77% 1px)';
+	                 }
+	                 if(item ['layer_id'] == '23' || item ['layer_id'] == 23)
+	                 {
+	                    img_dim1['top'] = '98px';
+	                    img_dim1['width'] = '122px';
+			               img_dim1['height'] = '88px';
+	                    img_dim1['left'] = '72px';
+	                    //img_dim1['transform'] = 'rotate(-75deg) skewY(59deg)';
+	                    img_dim1['transform'] = 'rotateZ(1deg) rotateX(50deg) rotateY(0deg) skewY(0deg) skewX(0deg)';
+	                    img_dim1['-webkit-clip-path'] = img_dim1['clip-path'] = 'polygon(100% 53%, 72% 99%, 23% 99%, 1px 48%, 28% 0px, 77% 1px)';
+	                 }
+	                 if(item ['layer_id'] == '24' || item ['layer_id'] == 24)
+	                 {
+	                   img_dim1['top'] = '86px';
+	                   img_dim1['width'] = '89px';
+	                   img_dim1['height'] = '63px';
+	                   img_dim1['left'] = '90px';
+	                   //img_dim1['transform'] = 'rotate(-75deg) skewY(59deg)';
+	                   img_dim1['transform'] = 'rotateZ(1deg) rotateX(50deg) rotateY(0deg) skewY(0deg) skewX(0deg)';
+	                   img_dim1['-webkit-clip-path'] = img_dim1['clip-path'] = 'polygon(100% 53%, 72% 99%, 23% 99%, 1px 48%, 28% 0px, 77% 1px)';
+	                 }
+	                 if(item ['layer_id'] == '25' || item ['layer_id'] == 25)
+	                 {
+	                   img_dim1['top'] = '78px';
+	                   img_dim1['width'] = '63px';
+	                   img_dim1['height'] = '44px';
+	                   img_dim1['left'] = '104px';
+	                   //img_dim1['transform'] = 'rotate(-75deg) skewY(59deg)';
+	                   img_dim1['transform'] = 'rotateZ(1deg) rotateX(50deg) rotateY(0deg) skewY(0deg) skewX(0deg)';
+	                   img_dim1['-webkit-clip-path'] = img_dim1['clip-path'] = 'polygon(100% 53%, 72% 99%, 23% 99%, 1px 48%, 28% 0px, 77% 1px)';
+	                 }
+	             }
+	             if(item ['shape_id'] == '5')
+	             {
+	               img_dim1['border-radius'] = '0px';
+	               if(item ['layer_id'] == '26' || item ['layer_id'] == 26)
+	               {
+	                   img_dim1['top'] = '107px';
+	                   img_dim1['width'] = '146px';
+	                   img_dim1['height'] = '169px';
+	                   img_dim1['left'] = '62px';
+	                   //img_dim1['transform'] = 'rotate(-75deg) skewY(59deg)';
+	                   img_dim1['transform'] = 'rotateZ(0deg) rotateX(50deg) rotateY(0deg) skewY(0deg) skewX(0deg)';
+	                   img_dim1['-webkit-clip-path'] = img_dim1['clip-path'] = 'polygon(76% 66%, 66% 62%, 59% 59%, 50% 57%, 41% 55%, 33% 54%, 22% 50%, 13% 46%,5% 40%, 0% 33%, 1% 24%, 5% 17%, 10% 12%, 16% 10%, 22% 10%, 29% 10%, 35% 11%, 41% 12%, 43% 13%, 46% 9%, 50% 4%, 56% 2%, 62% 0%, 68% 0%, 75% 1%, 81% 4%, 88% 6%, 91% 8%, 95% 13%, 98% 21%, 97% 32%, 89% 42%, 83% 49%, 79% 56%)';
+	               }
+	               if(item ['layer_id'] == '27' || item ['layer_id'] == 27)
+	               {
+	                   img_dim1['top'] = '81px';
+	                   img_dim1['width'] = '118px';
+	                   img_dim1['height'] = '129px';
+	                   img_dim1['left'] = '76px';
+	                   //img_dim1['transform'] = 'rotate(-75deg) skewY(59deg)';
+	                   img_dim1['transform'] = 'rotateZ(0deg) rotateX(50deg) rotateY(0deg) skewY(0deg) skewX(0deg)';
+	                   img_dim1['-webkit-clip-path'] = img_dim1['clip-path'] = 'polygon(76% 66%, 66% 62%, 59% 59%, 50% 57%, 41% 55%, 33% 54%, 22% 50%, 13% 46%,5% 40%, 0% 33%, 1% 24%, 5% 17%, 10% 12%, 16% 10%, 22% 10%, 29% 10%, 35% 11%, 41% 12%, 43% 13%, 46% 9%, 50% 4%, 56% 2%, 62% 0%, 68% 0%, 75% 1%, 81% 4%, 88% 6%, 91% 8%, 95% 13%, 98% 21%, 97% 32%, 89% 42%, 83% 49%, 79% 56%)';
+	               }
+	               if(item ['layer_id'] == '28' || item ['layer_id'] == 28)
+	               {
+	                   img_dim1['top'] = '57px';
+	                   img_dim1['width'] = '95px';
+	                   img_dim1['height'] = '109px';
+	                   img_dim1['left'] = '85px';
+	                   //img_dim1['transform'] = 'rotate(-75deg) skewY(59deg)';
+	                   img_dim1['transform'] = 'rotateZ(0deg) rotateX(50deg) rotateY(0deg) skewY(0deg) skewX(0deg)';
+	                   img_dim1['-webkit-clip-path'] = img_dim1['clip-path'] = 'polygon(76% 66%, 66% 62%, 59% 59%, 50% 57%, 41% 55%, 33% 54%, 22% 50%, 13% 46%,5% 40%, 0% 33%, 1% 24%, 5% 17%, 10% 12%, 16% 10%, 22% 10%, 29% 10%, 35% 11%, 41% 12%, 43% 13%, 46% 9%, 50% 4%, 56% 2%, 62% 0%, 68% 0%, 75% 1%, 81% 4%, 88% 6%, 91% 8%, 95% 13%, 98% 21%, 97% 32%, 89% 42%, 83% 49%, 79% 56%)';
+	               }
+	
+	               if(item ['layer_id'] == '29' || item ['layer_id'] == 29)
+	               {
+	                   img_dim1['top'] = '39px';
+	                   img_dim1['width'] = '76px';
+	                   img_dim1['height'] = '85px';
+	                   img_dim1['left'] = '95px';
+	                   //img_dim1['transform'] = 'rotate(-75deg) skewY(59deg)';
+	                   img_dim1['transform'] = 'rotateZ(0deg) rotateX(50deg) rotateY(0deg) skewY(0deg) skewX(0deg)';
+	                   img_dim1['-webkit-clip-path'] = img_dim1['clip-path'] = 'polygon(76% 66%, 66% 62%, 59% 59%, 50% 57%, 41% 55%, 33% 54%, 22% 50%, 13% 46%,5% 40%, 0% 33%, 1% 24%, 5% 17%, 10% 12%, 16% 10%, 22% 10%, 29% 10%, 35% 11%, 41% 12%, 43% 13%, 46% 9%, 50% 4%, 56% 2%, 62% 0%, 68% 0%, 75% 1%, 81% 4%, 88% 6%, 91% 8%, 95% 13%, 98% 21%, 97% 32%, 89% 42%, 83% 49%, 79% 56%)';
+	               }
+	
+	             }
+	           }
+	       }
+	
+	       function setImage_top_image(src)
+	       {
+	         //alert(src);
+	         if(src == '#')
+	         {
+	           //src = 'http://i-managed.biz/thecakeshop/bundles/design/imagetopdecorationimage/1512552712_3-16.png';
+	         }
+	         if(src != '#' && src != '')
+	         {
+	             var layerimg=$('.layer_right').attr('src');
+	             display = 'block';
+	
+	             var current_matter = $('.middel-bag').html();
+	             current_matter = current_matter+'<img src="'+src+'" class="cake-top-img-real" style="display:'+display+'">';
+	
+	             //change image if 1 layer
+	             if(item ['layer_id'] == 5)
+	             {
+	                 //alert(item ['layer_id']);
+	                /* if( item ['sidedecoration_id'] != null)
+	                 {
+	                   src2 = 'bundles/design/master_data/shape/layers/Sponge_Flavor/Icing/Sprinkles/';
+	                   src2 = src2 + '1_5_0_X_'+item ['sidedecoration_id']+'.png';
+	                 }
+	                 else{*/
+	                   src2 = 'bundles/design/master_data/shape/layers/index.html';
+	                   src2 = src2 + '1_5.png';
+	                 //}
+	
+	                // $('.layer_right').attr('src',src2);
+	                // if(item ['fillingtopdecoration_id'] != null)
+	                 if(item ['fillingtopdecoration_id'] == 1 || item ['fillingtopdecoration_id'] == 2)
+	                 {
+	                   src3 = 'bundles/design/master_data/shape/layers/Sponge_Flavor/Icing/index.html';
+	                   src3 = src3 + '1_5_Y_'+item ['fillingtopdecoration_id']+'.png';
+	                   $('.cake-toping-img-real').attr('src',src3);
+	                   $('.cake-toping-img-real').css({"padding-top":"5px"});
+	                   //$('.cake-toping-img-real').show();
+	
+	                 }else{
+	                   src3 = 'bundles/design/master_data/shape/layers/Sponge_Flavor/index.html';
+	                   src3 = src3 + '1_5_'+item ['spongeflavor_id']+'.png';
+	                   $('.cake-toping-img-real').attr('src',src3);
+	                   $('.cake-toping-img-real').css({"padding-top":"5px"});
+	                   //$('.cake-toping-img-real').show();
+	                 }
+	             }
+	             else{
+	               $('.cake-toping-img-real').hide();
+	             }
+	
+	
+	             $('.cake-top-img-real').attr('src',src);
+	             $('.cake-top-img-real').show();
+	
+	             $('.cake-top-img-real').css({"top":img_dim1['top'], "width":img_dim1['width'],"height":img_dim1['height'], "left":img_dim1['left'],"transform":img_dim1['transform'],"border-radius":img_dim1['border-radius'],"z-index":img_dim1['z-index'],"clip-path":img_dim1['clip-path'],"-webkit-clip-path":img_dim1['-webkit-clip-path']});
+	
+	         }
+	         else{
+	           //$('.cake-top-img-real').hide();
+	         }
+	
+	
+	       }
+	
+	
+	
+	      function change_colordiv_state(checkeddiv,colorid,colorname,colorcode)
+	      {
+	
+	               $('input:checkbox[name=colorcheck]').prop("checked",true);
+	               $(".color").removeClass('color_selected');
+	               $(checkeddiv).addClass('color_selected');
+	               $("#colorcheck").val(colorid);
+	               $("#msg_color").val(colorname);
+	               $(".message_display").css('color','#'+colorcode);
+				$(".color_name_text").html(colorname);
+	
+	          // alert($('input:checkbox[name='+checkboxname+']').is(":checked"));
+	      }
+	      function fireupload()
+	      {
+	           $('#topimageuploadModal').modal('show');
+	      }
+	      var data123='';
+	      var files123=''
+	      $("#topimageupload").change(function(e) {
+	          files123=e.target.files;
+	          name=$("#image_name").val();
+	          data123 = new FormData();
+	         $.each(files123, function(key, value)
+	         {
+	
+	             data123.append(key, value);
+	         });
+	
+	      });
+	      function add_topimage()
+	      {
+	           image=$("#topimageupload").val();
+	           name=$("#image_name").val();
+	
+	           console.log(data123);
+	
+	           if(image!='')
+	           {
+	                data123.append('image_name',name);
+	
+	                 $.ajax
+	           ({
+	               type: 'POST',
+	               url : "/uploadtopimage",
+	              data: data123,
+	              contentType: false,
+	              processData:false,
+	               success:function(msg){
+	
+	                      if(msg!="")
+	                      {
+	                           $("#topimageuploadModal").modal('hide');
+	                           $("#myModal").modal('show');
+	                           $("#div_appendimage").after(msg);
+	                           //$(".appendimage").append(msg);
+	                           $(".msg").html("Uploaded Image Successfully.");
+	                           $("#myModal").modal('hide');
+	                      }
+	                    //  location.reload();
+	
+	               }
+	           });
+	           }else{
+	             	                 	             	               $(".uploadimagemsg").css('display','block');
+	                $(".uploadimagemsg").html('<div class="alert alert-danger"> <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><div style="direction:ltr;"><strong>Error!</strong>&nbsp;&nbsp;&nbsp;Please upload image and enter name.</div></div>');
+	                setTimeout(function(){  $(".uploadimagemsg").css('display','none') }, 3000);
+	           }
+	      }
+	      function readimage(input){
+	           if (input.files && input.files[0]) {
+	               var reader = new FileReader();
+	               reader.onload = function (e) {
+	                   $('#uploadedimage').attr('src', e.target.result);
+	                   $("#uploadedimage").removeClass('hide');
+	                   $("#uploadedimage").css('hight','100px');
+	                   $("#uploadedimage").css('width','100px');
+	                   $("#uploadedimage").css('margin','10px');
+	               }
+	               reader.readAsDataURL(input.files[0]);
+	           }
+	
+	      }
+	       function getmessage(msgobj)
+	      {
+	       $(".message_display").html($(msgobj).val());
+	      }
+	      function getnote(noteobj)
+	      {
+	       $(".spec_note_display").html($(noteobj).val());
+	      }
+	     function tab_click(obj)
+		 {
+	
+	
+		   if($(obj).attr('id') =='complete1')
+	      {
+	        //last_step_topimage();
+	      }
+		   else
+	      {
+		     setImage_dim();
+	      }
+			  //$('.cake-top-img-real').show();
+	
+	
+			  $('.cake-top-img-real').css({"top":img_dim1['top'], "width":img_dim1['width'], "left":img_dim1['left'],"transform":img_dim1['transform'],"border-radius":img_dim1['border-radius'],"z-index":img_dim1['z-index'],"position":img_dim1['position']});
+		 }
+		 function last_step_topimage()
+		 {
+			 if(item ['shape_id'] == '1')
+	             {
+	               img_dim1['transform'] = 'rotateX(51deg) translateZ(61px)';
+	               img_dim1['border-radius'] = '50%';
+	               if(item ['layer_id'] == '5' || item ['layer_id'] == 5)
+	               {
+	                   //alert('yes');
+	                   img_dim1['top'] = '202px';
+	                   img_dim1['width'] = '160px';
+	                   img_dim1['left'] = '490px';
+					img_dim1['z-index'] = '1';
+					img_dim1['position'] = 'absolute';
+	               }
+	               if(item ['layer_id'] == '14' || item ['layer_id'] == 14)
+	               {
+	                   //alert('yes');
+	                   img_dim1['top'] = '163px';
+	                   img_dim1['width'] = '114px';
+	                   img_dim1['left'] = '514px';
+					img_dim1['z-index'] = '1';
+					img_dim1['position'] = 'absolute';
+	               }
+	               if(item ['layer_id'] == '16' || item ['layer_id'] == 16)
+	               {
+	
+	                   //alert('yes');
+	                   img_dim1['top'] = '134px';
+	                   img_dim1['width'] = '86px';
+	                   img_dim1['left'] = '527px';
+					img_dim1['z-index'] = '1';
+					img_dim1['position'] = 'absolute';
+	
+	               }
+	               if(item ['layer_id'] == '17' || item ['layer_id'] == 17)
+	               {
+	                   //alert('yes');
+	                   img_dim1['top'] = '110px';
+	                   img_dim1['width'] = '65px';
+	                   img_dim1['left'] = '539px';
+					img_dim1['z-index'] = '1';
+					img_dim1['position'] = 'absolute';
+	
+	               }
+	             }
+		 }
+	   
+</script>
+</body>
+
+
+</html>
+<script>
+    $(document).ready(function(){
+        $('#search_product').keyup(function(){
+            var keyword = $('#search_product').val();
+            if(keyword != '' && keyword.length >= 2){
+                var url = "/ajax-product-list";
+                $.ajax({
+                    url: url,
+                    data: {'keyword': keyword},
+                    success: function(response){
+                        var res = JSON.parse(response);
+                        $('#search_cake_list').html(res['html']);
+                    },
+                    error: function(error){
+                        console.log(error);
+                    }
+                });
+            }
+        });
+
+
+        $('#search_product').on('input', function() {
+            var userText = $(this).val();
+
+            $("#search_cake_list").find("option").each(function() {
+                if ($(this).val() == userText) {
+                    // redirect the user to search page
+                    var url = $(this).attr('data-value');
+                    if(url != undefined && url != ''){
+                        location.href = url;
+                    }
+                }
+            })
+        })
+    });
+
+ function lang_change()
+  {
+   // $('#myModal').modal('show');
+    $.ajax({
+      type : "POST",
+      url : "/changelang",
+      async: false,
+      success : function(resp){
+       location.reload();
+      }
+      }) ;
+  }
+  function check_tab_text()
+{
+    if($('.logintab').html().trim()=='Logout' || $('.logintab').html().trim()=='الخروج')
+    {
+         $.ajax
+        ({
+            type: 'POST',
+            url : "/logout",
+            success:function(msg){
+                if(msg=='success')
+                {
+                    //alert("Logout Successfully.")
+                    $("#loginModal").modal('hide');
+                    $('#myModal').modal('show');
+                    $(".msg").html("Logout successfully.");
+                    location.reload();
+                }
+
+            }
+        });
+    }else{
+        $("#loginModal").modal('show');
+    }
+}
+</script>
+<script>
+
+$('#btn_back2').click(function() {
+  $('#to_hide2').hide();
+  $('#to_hide1').show();
+});
+
+function show_hide1()
+{
+  $('#to_hide1').hide();
+  $('#to_hide2').show();
+}
+function login()
+{
+        $.ajax
+        ({
+            type: 'POST',
+            url : "/logincheck",
+            data: 'email='+$("#emailid").val()+'&password='+$("#pwd").val(),
+            success:function(msg){
+                if(msg=='success')
+                {
+                     $("#loginModal").modal('hide');
+                     $('#myModal').modal('show');
+                     $(".msg").html("Login Successfully");
+                     location.reload();
+                }else{
+
+                                                                                    $("#errormsg").html('<div class="alert alert-danger"> <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><div style="direction:ltr;"><strong>Error!</strong>&nbsp;&nbsp;&nbsp;'+msg+'</div></div>');
+
+                }
+
+            }
+        });
+}
+$('#basic-addon2').click(function(){
+      //alert($("#basic-addon2-text").val());
+if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test($("#basic-addon2-text").val()))
+{
+$.ajax
+({
+    type: 'POST',
+    url : "/ajax_subscriobe",
+    data: 'email_id='+$("#basic-addon2-text").val(),
+    success:function(msg){
+    // alert(msg);
+        if(msg=='success')
+        {
+             $('#myModal').modal('show');
+             $(".msg").html("Your email has been subscribed");
+             location.reload();
+        }else{
+
+             $("#errormsg2").html("<div class='alert alert-danger'> <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><div style='direction:ltr;'><strong>Error!</strong>&nbsp;&nbsp;&nbsp;"+msg+"</div></div>");
+
+            return false;
+        }
+     return false;
+    }
+});
+}
+else{
+$('#myModal').modal('show');
+$(".msg").html("Please enter valid email address");
+location.reload();
+}
+
+});
+</script>
