@@ -45,7 +45,7 @@ function App() {
             <Route path="staff/edit/:id" element={<CustomerEdit />} />
             <Route path="newstaff" element={<NewStaff/>} />
           </Route>
-          <Route path="*" element={<h1> Please type /admin in URL </h1>} />
+          <Route path="*" element={<h1> Please type /admin in URL email: "Admin@gmail.com" Password "admin123" </h1>} />
         </Routes>
       </BrowserRouter>
       </ThemeProvider>
