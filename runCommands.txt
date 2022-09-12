@@ -1,0 +1,11 @@
+python manage.py makemigrations
+python manage.py migrate
+
+
+env\scripts\activate
+cd backend
+python manage.py runserver
+
+npm start
+
+npm run dev
