@@ -1,11 +1,14 @@
+
 python manage.py makemigrations
 python manage.py migrate
 
-
+backend
 env\scripts\activate
 cd backend
 python manage.py runserver
 
+admin-frontend
 npm start
 
+customer-frontend
 npm run dev
