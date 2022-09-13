@@ -13,8 +13,8 @@ After cloning the repo, do the following to setup the app:
 
 ```
 env\scripts\activate
-pip install -r requirements.txt
 cd backend
+pip install -r requirements.txt
 python manage.py runserver
 ```
 
